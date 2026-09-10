@@ -10,6 +10,8 @@ The accompanying English paper,
 [Fermionic coherent states: convex order and Gaussian rank](paper/output/pdf/fermionic-coherent-states.pdf),
 contains the mathematical proofs and the precise formalization scope.
 [LaTeX sources and PDF build instructions](paper/README.md) are included.
+For an accessible account of the ideas and the scope of the results, see the
+English blog draft, [Why Simple Fermionic States Are Extremal](blog/why-simple-fermionic-states-are-extremal.md).
 
 | Result | Status | Main source |
 | --- | --- | --- |
