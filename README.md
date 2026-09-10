@@ -6,7 +6,7 @@ eight-mode Gaussian rank.
 **The basic exterior-power Husimi and entropy theorems are formalized end to
 end. The Gaussian-rank-four theorem is not yet formalized end to end.**
 
-The accompanying English paper,
+The accompanying paper,
 [Fermionic coherent states: convex order and Gaussian rank](paper/output/pdf/fermionic-coherent-states.pdf),
 contains the mathematical proofs and the precise formalization scope.
 [LaTeX sources and PDF build instructions](paper/README.md) are included.
