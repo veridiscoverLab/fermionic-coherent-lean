@@ -1,0 +1,276 @@
+\section{Coherent distributions and entropy minima}
+\label{ent:section}
+
+\subsection{Normalization and entropy conventions}
+\label{ent:definitions}
+
+In this section, $(\mathcal O,\nu)$ denotes either the Slater orbit
+with its invariant probability measure from Section~\ref{ext:section},
+or a fixed-parity Gaussian orbit from Theorem~\ref{spin:convex-order}.
+The representation dimension is respectively
+$D=\binom np$ or $D=2^{n-1}$. The same definitions apply to the odd-spin
+orbit in Corollary~\ref{spin:odd}. A unit coherent vector at $x\in\mathcal O$
+is denoted by $\Omega_x$, and
+$Q_\rho(x)=\langle\Omega_x,\rho\Omega_x\rangle$ is independent of its
+phase.
+
+The resolution identity gives
+\begin{equation}
+ \int_{\mathcal O}|\Omega_x\rangle\langle\Omega_x|\,d\nu(x)
+ =\frac{\Id}{D},
+ \qquad D\int_{\mathcal O}Q_\rho\,d\nu=1.
+ \label{ent:resolution}
+\end{equation}
+For exterior powers this is \eqref{ext:resolution}. For the irreducible
+spin representations, the averaged projector commutes with the group;
+Schur's lemma and its trace one give the identity.
+
+Define the unnormalized and normalized positive moments by
+\begin{equation}
+ M_\rho(q)=\int_{\mathcal O}Q_\rho^q\,d\nu,
+ \qquad N_\rho(q)=D M_\rho(q),\qquad q>0.
+ \label{ent:moments-definition}
+\end{equation}
+The normalized first moment is one. Since $Q_\rho\ge0$ has positive
+integral, each $M_\rho(q)$ is strictly positive. All these moments are
+finite because $0\le Q_\rho\le1$.
+
+We use the resolution measure $D\,d\nu$ to define the
+R\'enyi--Wehrl and Wehrl entropies:
+\begin{align}
+ S_q(\rho)&=\frac{\log N_\rho(q)}{1-q},
+ &&q>0,\quad q\ne1,
+ \label{ent:renyi-definition}\\
+ S_W(\rho)&=-D\int_{\mathcal O}Q_\rho\log Q_\rho\,d\nu.
+ \label{ent:wehrl-definition}
+\end{align}
+Logarithms are natural and $0\log0=0$. In particular, the latter
+integrand is the continuous extension of $x\log x$ at zero.
+The probability density relative to $\nu$ is $f_\rho=DQ_\rho$;
+its differential entropy is
+\begin{equation}
+ -\int f_\rho\log f_\rho\,d\nu=S_W(\rho)-\log D.
+ \label{ent:output-entropy}
+\end{equation}
+
+\subsection{The coherent Beta laws}
+
+For $a,b>0$, the distribution $\operatorname{Beta}(a,b)$ on $(0,1)$
+has density
+\[
+ \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}
+ t^{a-1}(1-t)^{b-1},
+\]
+where $\Gamma(z)=\int_0^\infty s^{z-1}e^{-s}\,ds$ for $z>0$
+is Euler's Gamma function. A $\operatorname{Gamma}(a,1)$ variable
+has density $s^{a-1}e^{-s}/\Gamma(a)$ on $(0,\infty)$.
+If $X$ and $Y$ are independent Gamma variables with shapes $a,b$
+and common scale one, the change of variables
+$(X,Y)=(rt,r(1-t))$ shows that $X/(X+Y)$ has distribution
+$\operatorname{Beta}(a,b)$.
+
+\begin{proposition}[Coherent measurement laws]
+\label{ent:beta-products}
+For a Slater input in $\mathcal H_{p,n}$ with $0<p<n$,
+\begin{equation}
+ Q_{\rho_W}\ \overset{\mathrm{law}}=
+ \prod_{j=0}^{p-1} A_j,
+ \qquad
+ A_j\sim\operatorname{Beta}(p-j,n-p),
+ \label{ent:exterior-beta}
+\end{equation}
+where the $A_j$ are independent. For $p=0$ or $p=n$, the coherent
+measurement is identically one.
+
+For a pure Gaussian input in either parity sector $\mathcal F_n^\epsilon$,
+\begin{equation}
+ Q_{\Omega}\ \overset{\mathrm{law}}=
+ \prod_{k=1}^{n-1} B_k,
+ \qquad B_k\sim\operatorname{Beta}(k,k),
+ \label{ent:spin-beta}
+\end{equation}
+with independent factors. The product is one when $n=1$.
+For the basic spin representation of $\Spin(2m+1)$, use
+\eqref{ent:spin-beta} with $n=m+1$.
+\end{proposition}
+\begin{proof}
+Let $Z$ be a standard complex Gaussian vector in $E=\C^n$, with
+independent coordinates of density $\pi^{-1}e^{-|z|^2}$. Its direction
+$u=Z/\|Z\|$ is uniform on the complex unit sphere. For a fixed
+$p$-plane $W$, the variables
+\[
+ X=\|\pi_W Z\|^2,\qquad
+ Y=\|(\Id-\pi_W)Z\|^2
+\]
+are independent Gamma variables of shapes $p$ and $n-p$.
+Consequently the first conditional weight is
+\begin{equation}
+ a_{\rho_W}(u)=\|\pi_Wu\|^2=\frac{X}{X+Y}
+ \sim\operatorname{Beta}(p,n-p).
+ \label{ent:first-exterior-weight}
+\end{equation}
+For almost every $u$ this weight is positive. By
+Lemma~\ref{ext:coherent-closure}, the normalized conditional input
+is a Slater density in $\Lambda^{p-1}(u^\perp)$. Its inner Haar
+Husimi distribution depends only on $(p-1,n-1)$, independently of
+$u$. On the double-Haar probability space of
+\eqref{ext:double-haar}, this conditional distribution being constant
+means that the lower-dimensional readout is independent of the first
+weight. Iterating \eqref{ext:conditioning} proves
+\eqref{ent:exterior-beta}; at step $j$ the two Beta shapes are
+$p-j$ and $(n-j)-(p-j)=n-p$.
+
+For a Gaussian input, its Majorana covariance $\Gamma_\Omega$
+satisfies $\Gamma_\Omega^2=-\Id$. A Haar-rotated first mode gives
+a uniform oriented orthonormal two-frame $(u,v)$ in $\R^{2n}$.
+Conditioned on $u$, the vector $v$ is uniform on the unit sphere in
+$u^\perp$. The linear functional $v\mapsto u^{\mathsf T}\Gamma_\Omega v$
+is represented there by the unit vector $\Gamma_\Omega^{\mathsf T}u$.
+For $n\ge2$, its value $t$ therefore has density proportional to
+\[
+ (1-t^2)^{n-2},\qquad -1<t<1.
+\]
+The occupation identity \eqref{spin:occupation} gives
+$a=(1+t)/2$, whose density is proportional to
+$a^{n-2}(1-a)^{n-2}$. Thus
+$a\sim\operatorname{Beta}(n-1,n-1)$.
+The Gaussian conditional closure in Lemma~\ref{spin:gaussian-closure}
+and the double-Haar identity \eqref{spin:double-haar} make the
+remaining coherent readout independent of this weight, with the
+law for $n-1$ modes. Induction proves \eqref{ent:spin-beta}.
+The one-dimensional initial sector gives the empty product.
+Finally, Corollary~\ref{spin:odd} identifies the entire odd-spin
+coherent orbit and its probability measure with the indicated
+half-spin orbit.
+\end{proof}
+
+The independence in Proposition~\ref{ent:beta-products} describes
+coherent inputs. For a general density, its normalized conditional
+state varies with the preceding measurement direction; the convex-order
+proof retains that dependence.
+
+\subsection{Positive moments and explicit minima}
+
+The Beta integral gives
+\begin{equation}
+ \E A^q=
+ \frac{\Gamma(a+q)\Gamma(a+b)}
+ {\Gamma(a)\Gamma(a+b+q)},
+ \qquad A\sim\operatorname{Beta}(a,b),\quad q>0.
+ \label{ent:beta-moment}
+\end{equation}
+Consequently the coherent moments in the two series are
+\begin{align}
+ m_{p,n}(q)
+ &:=\prod_{j=0}^{p-1}
+ \frac{\Gamma(p-j+q)\Gamma(n-j)}
+ {\Gamma(p-j)\Gamma(n-j+q)},
+ \label{ent:exterior-moments}\\
+ b_n(q)
+ &:=\prod_{k=1}^{n-1}
+ \frac{\Gamma(k+q)\Gamma(2k)}
+ {\Gamma(k)\Gamma(2k+q)}.
+ \label{ent:spin-moments}
+\end{align}
+Here $m_{0,n}(q)=1$ by the empty-product convention, while each
+factor in $m_{n,n}(q)$ cancels to one. These formulas cover every
+real $q>0$. In particular,
+\begin{equation}
+ m_{p,n}(1)=\binom np^{-1},\qquad
+ b_n(1)=2^{-(n-1)},
+ \label{ent:first-moments}
+\end{equation}
+as required by \eqref{ent:resolution}.
+
+\begin{theorem}[Wehrl and R\'enyi--Wehrl minima]
+\label{ent:minima}
+Let $H_0=0$ and $H_r=\sum_{j=1}^r j^{-1}$ for $r\ge1$.
+For every density on $\mathcal H_{p,n}$, $0\le p\le n$,
+\begin{align}
+ S_q(\rho)
+ &\ge\frac{\log\!\left[\binom np\,m_{p,n}(q)\right]}{1-q},
+ &&q>0,\quad q\ne1,
+ \label{ent:exterior-renyi}\\
+ S_W(\rho)
+ &\ge s_{p,n}:=\sum_{j=0}^{p-1}(H_{n-j}-H_{p-j}).
+ \label{ent:exterior-wehrl}
+\end{align}
+Equality in each inequality holds precisely for pure Slater densities.
+
+For every density supported on the fixed parity sector
+$\mathcal F_n^\epsilon$, $n\ge1$,
+\begin{align}
+ S_q(\rho)
+ &\ge\frac{\log[2^{n-1}b_n(q)]}{1-q},
+ &&q>0,\quad q\ne1,
+ \label{ent:spin-renyi}\\
+ S_W(\rho)
+ &\ge s_n^{\mathrm{spin}}:=\sum_{k=1}^{n-1}(H_{2k}-H_k).
+ \label{ent:spin-wehrl}
+\end{align}
+Equality holds precisely for pure Gaussian densities in that parity
+sector. For the basic spin representation of $\Spin(2m+1)$, the
+same formulas hold with dimension $2^m$, moment $b_{m+1}(q)$,
+and constant $s_{m+1}^{\mathrm{spin}}$.
+\end{theorem}
+\begin{proof}
+For $q>1$, the function $x\mapsto x^q$ is continuous and strictly
+convex on $[0,1]$. Theorems~\ref{ext:convex-order} and
+\ref{spin:convex-order} imply that its moment is maximized by a
+pure coherent input. Multiplication by $D$, application of the
+increasing logarithm, and division by $1-q<0$ give the entropy
+lower bound. For $0<q<1$, use the continuous strictly convex
+function $x\mapsto-x^q$. The moment inequality reverses, and
+$1-q>0$, giving the same direction for the entropy inequality.
+The positivity of the moments justifies every logarithm and its
+equality criterion. Strict convexity identifies the equality cases
+in both ranges.
+
+For Wehrl entropy, apply the same theorems to the continuous strictly
+convex function $x\mapsto x\log x$, with its value zero at the
+origin, and multiply by $-D$. It remains to evaluate the coherent
+integral. Differentiation of a moment at $q=1$ gives
+\[
+ \left.\frac{d}{dq}\int Q_\Omega^q\,d\nu\right|_{q=1}
+ =\int Q_\Omega\log Q_\Omega\,d\nu.
+\]
+This differentiation is justified directly: for
+$q\in[1/2,3/2]$ and $0<x\le1$,
+$|x^q\log x|\le x^{1/2}|\log x|\le2/e$.
+The derivative at $x=0$ is zero, so dominated convergence applies
+on the probability space including all zeros of $Q_\Omega$.
+
+Taking logarithmic derivatives in
+\eqref{ent:exterior-moments} and \eqref{ent:spin-moments}, and
+using $\Gamma(z+1)=z\Gamma(z)$, gives
+\begin{align*}
+ -D_{p,n}m_{p,n}'(1)
+ &=\sum_{j=0}^{p-1}(H_{n-j}-H_{p-j}),\\
+ -2^{n-1}b_n'(1)
+ &=\sum_{k=1}^{n-1}(H_{2k}-H_k).
+\end{align*}
+For clarity, if $\psi_\Gamma=\Gamma'/\Gamma$, the recurrence
+$\psi_\Gamma(r+1)=\psi_\Gamma(r)+1/r$ shows that each difference
+$\psi_\Gamma(b+1)-\psi_\Gamma(a+1)$ at positive integers equals
+$H_b-H_a$. Equation~\eqref{ent:first-moments} supplies the factor
+$D$ in the preceding derivatives. This proves the displayed constants.
+The odd-spin conclusions follow from Corollary~\ref{spin:odd}.
+\end{proof}
+
+\begin{example}[Small sectors]
+\label{ent:examples}
+For one particle in $n$ modes, the coherent Wehrl value is
+$s_{1,n}=H_n-1$. For two particles in four modes,
+\[
+ s_{2,4}=(H_4-H_2)+(H_3-H_1)=\frac{17}{12}.
+\]
+The maximally mixed density on this six-dimensional sector has
+$Q\equiv1/6$ and hence $S_W=\log6$, larger than the coherent
+value. In the spin series the constants for $n=1,2,3$ are
+$0$, $1/2$, and $13/12$. The empty and filled exterior sectors
+have zero Wehrl and R\'enyi--Wehrl entropy.
+\end{example}
+
+All formulas above concern the basic exterior, half-spin, and odd-spin
+representations specified in the corresponding theorems. The
+representation parameter is not replaced by a higher Cartan power.

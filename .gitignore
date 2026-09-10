@@ -17,4 +17,14 @@ __pycache__/
 .DS_Store
 deliverables/
 
+# LaTeX intermediates and local visual inspection
+paper/build/
+paper/qa/
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.synctex.gz
+
 # Recorded evidence/logs are intentionally tracked.

@@ -6,6 +6,11 @@ eight-mode Gaussian rank.
 **The basic exterior-power Husimi and entropy theorems are formalized end to
 end. The Gaussian-rank-four theorem is not yet formalized end to end.**
 
+The accompanying English paper,
+[Fermionic coherent states: convex order and Gaussian rank](paper/output/pdf/fermionic-coherent-states.pdf),
+contains the mathematical proofs and the precise formalization scope.
+[LaTeX sources and PDF build instructions](paper/README.md) are included.
+
 | Result | Status | Main source |
 | --- | --- | --- |
 | Husimi convex order for every basic exterior power, with strict equality exactly at pure Slater states | End-to-end formalized | [HusimiInduction.lean](Fermionic/HusimiInduction.lean) |
@@ -73,7 +78,7 @@ required or permitted by this project's execution policy.
 ## Work in progress
 
 The rank certificate vanishes on the entire three-parameter normal family and
-is nonzero at the encoded target. Completing the rank-four proof requires the
+is nonzero at the encoded target. Completing the Lean proof of rank four requires the
 original Fock-to-coordinate dictionary, covariance under the actual common
 operations, and reduction of every three-term pure-spinor sum, including
 degenerate cases.

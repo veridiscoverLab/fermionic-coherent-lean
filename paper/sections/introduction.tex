@@ -1,0 +1,142 @@
+\section{Introduction}
+\label{sec:introduction}
+
+A fermionic state can be compared with simple states in two different ways.
+One can measure its overlaps with them, or ask how many are needed to express
+it as a sum. The first question concerns a probability distribution; the
+second concerns an exact vector identity. This paper treats both questions
+using the geometry of Slater and Gaussian states.
+
+For a fixed number of particles, the one-particle space is $\C^n$ and the
+$p$-particle space is its exterior power $\Lambda^p\C^n$. A unit vector
+$u_1\wedge\cdots\wedge u_p$, with the $u_i$ orthonormal, is called a
+\emph{Slater vector}. It describes the occupation of $p$ mutually orthogonal
+one-particle modes. Even in a small space, most vectors need not have this
+form. For example, in $\Lambda^2\C^4$ the normalized vector
+\begin{equation}\label{intro:two-particle}
+ \psi=\frac{e_1\wedge e_2+e_3\wedge e_4}{\sqrt2}
+\end{equation}
+is not a Slater vector: its exterior square is nonzero, whereas the square
+of a decomposable two-vector vanishes. Its overlap with $e_1\wedge e_2$ has
+squared modulus $1/2$. Rotating the reference Slater vector gives an entire
+distribution of such overlaps.
+
+A density operator is a positive semidefinite operator $\rho$ of trace one;
+it includes both pure states $|\psi\rangle\langle\psi|$ and mixtures. If
+$\Omega_x$ is a unit coherent vector indexed by a point $x$ of the coherent
+orbit, its \emph{Husimi function} is
+\[
+ Q_\rho(x)=\langle\Omega_x,\rho\Omega_x\rangle.
+\]
+The inner product is conjugate-linear in its first argument. The orbit
+carries the probability measure $\nu$ induced by normalized Haar measure
+of the acting compact group. Thus $Q_\rho$ is a random variable in $[0,1]$.
+For a $D$-dimensional irreducible representation, its mean is $1/D$.
+For a unit input vector $\psi$, we abbreviate
+$Q_\psi=Q_{|\psi\rangle\langle\psi|}$.
+
+\subsection{Comparing the whole distribution}
+Our distribution theorem says that coherent inputs maximize every continuous
+convex average:
+\begin{equation}\label{intro:convex-order}
+ \int \Phi(Q_\rho)\dd\nu
+ \leq \int \Phi(Q_{P_\Omega})\dd\nu,
+ \qquad P_\Omega=|\Omega\rangle\langle\Omega|.
+\end{equation}
+Here $\Omega$ is any coherent unit vector, and $\Phi$ is continuous and convex
+on $[0,1]$. This relation is called \emph{convex order}. Since all these
+random variables have the same mean, it says that the coherent distribution
+has the greatest spread in every convex test. It implies a comparison of
+variances by taking $\Phi(t)=t^2$, and of Wehrl entropies by taking
+$\Phi(t)=t\log t$ with the continuous value zero at $t=0$. For every
+strictly convex $\Phi$, equality in \eqref{intro:convex-order} forces the
+whole input density to be a pure coherent state.
+
+We prove this statement for all basic exterior powers
+(Theorem~\ref{ext:convex-order}), for both basic half-spin representations
+(Theorem~\ref{spin:convex-order}), and for the basic odd-dimensional spin
+representation (Corollary~\ref{spin:odd}). In the half-spin realization
+used below, the coherent vectors are pure fermionic Gaussian vectors,
+whose particle number may vary while their parity remains fixed.
+Section~\ref{sec:spin} constructs this realization and explains its
+relation to odd-dimensional spin.
+
+The entropy problem has a long history. Gnutzmann and \.{Z}yczkowski
+introduced R\'enyi--Wehrl localization measures in the generalized coherent
+state setting~\cite{gnutzmann2001}. Sugita proved coherent-state optimality
+for integer indices greater than one~\cite{sugita2002}, and studied the
+resulting moments for many-particle states~\cite{sugita2003}. Lieb and
+Solovej proved a convex-function comparison for symmetric $\mathrm{SU}(N)$
+coherent states~\cite{liebsolovej2016}. Symmetric powers describe a different
+representation series from the exterior powers considered here. Our
+comparison treats arbitrary continuous convex functions and all mixed
+inputs in the stated fermionic series. In particular, it yields all real
+positive-order R\'enyi--Wehrl minima, together with their equality cases.
+
+The main step is a compatibility statement about conditioning. Detecting one
+occupied mode turns the original density into a density on a smaller
+fermionic space. Its normalization is an occupation probability, determined
+by a one-particle matrix or a Majorana covariance matrix. We express this
+matrix as a convex combination of coherent matrices using one set of
+probabilities, chosen from the diagonal of the same rotated full density.
+These probabilities work for every subsequent measured direction. The
+conditional coherent states also remain coherent in the smaller space.
+The induction therefore uses the same comparison state at every stage.
+The equality argument recovers the full density from this common
+decomposition; it does not identify a many-particle state merely by its
+one-particle matrix.
+
+\subsection{Counting Gaussian summands}
+Allowing superpositions of particle numbers leads to a different question.
+The \emph{Gaussian rank} $\chi_G(\psi)$ is the least number of nonzero
+Gaussian vectors whose sum is $\psi$, with arbitrary complex coefficients
+absorbed into the summands. The definition and parity convention appear in
+Section~\ref{sec:gaussian-rank}.
+
+On four modes, let $|0000\rangle$ and $|1111\rangle$ denote the vacuum and
+the state with all four modes occupied, and put
+\[
+ M=\frac{|0000\rangle+|1111\rangle}{\sqrt2}.
+\]
+This state is a basic non-Gaussian resource in matchgate computation. Its
+two-copy expansion has four Gaussian terms. A shorter expansion, however,
+could use terms coupling the two blocks of four modes. Cudby and Strelchuk
+proved a rank-four result under symmetry restrictions and formulated the
+unrestricted two-copy problem~\cite{cudby2023}. Gaussian decompositions are
+also central to the simulation methods of Dias and Koenig~\cite{diaskoenig2024}.
+Related multiplicativity results for Gaussian fidelity and extent concern
+different optimization problems~\cite{reardon2024}.
+Recent work of Tarabunga studies non-Gaussianity through the eigenvalue
+distribution of a two-copy Majorana operator and its behavior under
+postselected Gaussian operations~\cite{tarabunga2026}.
+
+We prove that $\chi_G(M^{\otimes2})=4$, and more generally that Gaussian
+rank is multiplicative for two arbitrary nonzero four-mode even vectors.
+The obstruction is a polynomial built from the full bilinear Gram of the
+Clifford bivector action. It is nonzero at the target and vanishes on every
+sum of three pure spinors. A common change of coordinates first normalizes
+two summands. A polynomial deformation then brings the third summand into
+a tractable chart, and a specialization argument recovers all degenerate
+cases. The change of coordinates acts on the entire sum: transforming the
+summands independently would destroy the equation being tested.
+
+\subsection{Formal verification and organization}
+The accompanying Lean development verifies the exterior-power
+convex-order theorem, the actual Slater-orbit probability measure, the
+strict equality characterization, and the positive-order moment and entropy
+minimizer theorems. These are end-to-end proofs with no additional
+mathematical hypotheses beyond those stated in the theorems. The standard
+logical foundations and the precise boundary of the formalization are
+recorded in Section~\ref{sec:formalization}. In particular, the Gaussian-rank
+four conclusion still has a paper proof supplemented by verified coordinate
+certificates and original-object lemmas.
+
+The sources, full declaration types, and verification evidence are available at
+\begin{center}
+ \small\url{https://github.com/veridiscoverLab/fermionic-coherent-lean}.
+\end{center}
+We begin with exterior powers, where the conditioning argument is most
+transparent, and then pass to spin representations. After evaluating the
+coherent distributions and entropy constants, we turn to Gaussian rank.
+The final application section gives quantitative entropy bounds and the
+information capacity of the specified coherent measurements.

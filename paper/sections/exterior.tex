@@ -1,0 +1,389 @@
+\section{Exterior-power Husimi convex order}
+\label{ext:section}
+
+\subsection{Slater states and the measurement}
+
+Let $E=\C^n$ with its standard Hermitian inner product, linear in the
+second variable. For $0\le p\le n$, equip
+\[
+ \mathcal H_{p,n}=\Lambda^p E,
+ \qquad D_{p,n}=\dim\mathcal H_{p,n}=\binom np,
+\]
+with the inner product for which increasing wedges of an orthonormal
+basis are orthonormal. Thus a wedge of $p$ orthonormal vectors has norm
+one. The induced unitary representation is
+$R_p(U)=\Lambda^p U$, for $U\in U(n)$.
+
+If $W\subset E$ is a $p$-dimensional subspace and $(w_1,\ldots,w_p)$
+is an orthonormal basis of $W$, the vector
+$\Omega_W=w_1\wedge\cdots\wedge w_p$ is a \emph{unit Slater vector}.
+A different orthonormal basis changes it by a scalar of modulus one.
+Consequently,
+\[
+ \rho_W=|\Omega_W\rangle\langle\Omega_W|
+\]
+is determined by $W$. We call $\rho_W$ a \emph{pure Slater density} and
+write $\pi_W$ for the orthogonal projection from $E$ onto $W$; these
+operators act on different spaces. The Slater-projector orbit is
+$\mathcal O_{p,n}=\{\rho_W:\dim W=p\}$.
+
+Fix a unit Slater reference $\Omega_0$. The pushforward of Haar
+probability measure on $U(n)$ under
+\[
+ U\longmapsto
+ |R_p(U)\Omega_0\rangle\langle R_p(U)\Omega_0|
+\]
+is denoted by $\nu_{p,n}$. Transitivity and Haar invariance make this
+measure independent of the reference. Equivalently, it is the invariant
+probability measure on the Grassmannian of $p$-planes, expressed through
+their Slater projectors.
+
+A \emph{density operator} on $\mathcal H_{p,n}$ is an operator
+$\rho\ge0$ with $\Tr\rho=1$. Its Husimi function is
+\begin{equation}
+ Q_\rho(P)=\Tr(\rho P),\qquad P\in\mathcal O_{p,n}.
+ \label{ext:husimi}
+\end{equation}
+We also write
+$Q_\rho(U)=\langle R_p(U)\Omega_0,\rho R_p(U)\Omega_0\rangle$
+for the same measurement pulled back to the group. Since
+$0\le\rho\le\Id$, its values lie in $[0,1]$.
+
+The normalization is
+\begin{equation}
+ \int_{\mathcal O_{p,n}}P\,d\nu_{p,n}(P)
+ =\frac{\Id_{\mathcal H_{p,n}}}{D_{p,n}},
+ \qquad
+ \int Q_\rho\,d\nu_{p,n}=\frac1{D_{p,n}}.
+ \label{ext:resolution}
+\end{equation}
+Indeed, the averaged projector commutes with every $R_p(U)$.
+Commutation with diagonal one-particle unitaries makes it diagonal in
+the occupation basis, because distinct occupied subsets have distinct
+characters. Permutation unitaries make all its diagonal entries equal.
+Its trace is one, which proves the first identity; pairing with $\rho$
+proves the second. For $p=0$ and $p=n$, the sector is one-dimensional,
+its unique density is Slater, and $Q_\rho\equiv1$. This also includes
+$n=p=0$.
+
+\begin{theorem}[Exterior-power Husimi convex order]
+\label{ext:convex-order}
+For every $0\le p\le n$, every density operator $\rho$ on
+$\mathcal H_{p,n}$, every continuous convex function
+$\Phi:[0,1]\to\R$, and every pure Slater density $\rho_W$,
+\begin{equation}
+ \int\Phi(Q_\rho)\,d\nu_{p,n}
+ \le
+ \int\Phi(Q_{\rho_W})\,d\nu_{p,n}.
+ \label{ext:order}
+\end{equation}
+The right-hand side is independent of $W$. If $\Phi$ is strictly
+convex, equality holds if and only if $\rho$ is a pure Slater density.
+\end{theorem}
+
+All the compared distributions have the mean in
+\eqref{ext:resolution}. The theorem says that a Slater input maximizes
+every continuous convex observation of the measurement value. The
+equality statement concerns the whole density operator, including its
+off-diagonal entries.
+
+\subsection{A shared convex mixture}
+
+We first record the probabilistic step used here and in the spinor
+argument. Its coefficients are fixed before the measurement variable
+is sampled.
+
+\begin{lemma}[Shared-mixture comparison]
+\label{ext:common-mixture}
+Let $(X,\mu)$ be a probability space. Suppose measurable functions
+$a,a_1,\ldots,a_L:X\to[0,1]$ satisfy
+\[
+ a(x)=\sum_{j=1}^L t_j a_j(x),\qquad
+ t_j\ge0,\qquad\sum_{j=1}^L t_j=1,
+\]
+and all $a_j$ have the same distribution $\eta$. For every continuous
+convex function $H:[0,1]\to\R$,
+\begin{equation}
+ \int_X H(a(x))\,d\mu(x)
+ \le \int_{[0,1]}H(t)\,d\eta(t).
+ \label{ext:shared-jensen}
+\end{equation}
+If $H$ is strictly convex, equality implies that all the $a_j$ with
+$t_j>0$ agree almost everywhere.
+\end{lemma}
+\begin{proof}
+Pointwise Jensen gives $H(a)\le\sum_jt_jH(a_j)$. Integration and
+the common distribution give \eqref{ext:shared-jensen}. All functions
+being integrated are bounded. If the integrals are equal, the
+nonnegative Jensen difference vanishes almost everywhere. The equality
+criterion for strict convexity gives the assertion.
+\end{proof}
+
+If $R$ is a $[0,1]$-valued random variable, define
+\begin{equation}
+ H_\Phi(t)=\E\Phi(tR),\qquad 0\le t\le1.
+ \label{ext:scale-function}
+\end{equation}
+Continuity follows by bounded convergence, and convexity follows
+pointwise. If $\Phi$ is strictly convex and $\Pr(R>0)>0$, then
+$H_\Phi$ is strictly convex: for distinct $s,t$ the strict scalar
+inequality holds on the event $R>0$.
+
+\subsection{Contraction and the one-particle density}
+
+For $u\in E$, let $c(u)^*$ denote creation by $u$, namely
+$\xi\mapsto u\wedge\xi$, and let $c(u)$ be its adjoint. Thus $c(u)$
+is conjugate-linear in $u$. These operators act on the full graded
+exterior space $\Lambda^\bullet E$ and change degree by one; contraction
+vanishes on degree zero. On a decomposable vector,
+\begin{equation}
+ c(u)(v_1\wedge\cdots\wedge v_p)
+ =\sum_{j=1}^p(-1)^{j-1}\langle u,v_j\rangle
+ v_1\wedge\cdots\wedge\widehat v_j\wedge\cdots\wedge v_p.
+ \label{ext:contraction}
+\end{equation}
+The hat indicates the omitted factor. The canonical anticommutation
+relations are
+\[
+ c(u)c(v)+c(v)c(u)=0,
+ \qquad
+ c(u)c(v)^*+c(v)^*c(u)=\langle u,v\rangle\Id.
+\]
+For unit $u$, the operator $N_u=c(u)^*c(u)$ is the projection onto
+the states in which $u$ is occupied. If $(e_i)_{i=1}^n$ is an
+orthonormal basis, then on $\mathcal H_{p,n}$,
+\begin{equation}
+ \sum_{i=1}^n N_{e_i}=p\Id.
+ \label{ext:number}
+\end{equation}
+Both assertions can be read directly in the occupation basis.
+
+For a density $\rho$ on $\mathcal H_{p,n}$, define its one-particle
+density $\gamma_\rho$ by
+\begin{equation}
+ a_\rho(u):=\Tr\bigl(c(u)\rho c(u)^*\bigr)
+ =\Tr(\rho N_u)=\langle u,\gamma_\rho u\rangle.
+ \label{ext:one-body}
+\end{equation}
+Polarization gives a unique Hermitian operator on $E$. The projection
+property of $N_u$ and \eqref{ext:number} imply
+\begin{equation}
+ 0\le\gamma_\rho\le\Id_E,
+ \qquad \Tr\gamma_\rho=p.
+ \label{ext:pauli-bounds}
+\end{equation}
+For a Slater input, $\gamma_{\rho_W}=\pi_W$.
+
+\begin{lemma}[One-particle mixture from the original density]
+\label{ext:occupation-mixture}
+Choose an orthonormal eigenbasis $(f_i)_{i=1}^n$ of $\gamma_\rho$.
+For every $p$-element subset $S\subset\{1,\ldots,n\}$, let
+$\Omega_S$ be its increasing occupation wedge,
+$W_S=\operatorname{span}\{f_i:i\in S\}$, and
+$t_S=\langle\Omega_S,\rho\Omega_S\rangle$. Then
+\begin{equation}
+ t_S\ge0,\qquad \sum_{|S|=p}t_S=1,
+ \qquad
+ \gamma_\rho=\sum_{|S|=p}t_S\pi_{W_S}.
+ \label{ext:diagonal-mixture}
+\end{equation}
+If $n\ge1$, then for a uniformly distributed unit vector $u\in E$,
+any continuous convex $H:[0,1]\to\R$, and any rank-$p$ projection $\pi_W$,
+\begin{equation}
+ \E_u H(\langle u,\gamma_\rho u\rangle)
+ \le \E_u H(\langle u,\pi_Wu\rangle).
+ \label{ext:occupation-order}
+\end{equation}
+If $H$ is strictly convex, equality forces exactly one $t_S$ to be
+positive, and consequently $\rho=|\Omega_S\rangle\langle\Omega_S|$.
+\end{lemma}
+\begin{proof}
+The $t_S$ are diagonal entries of the same positive trace-one operator
+in a complete orthonormal basis, so they are probabilities. For each
+$i$, the occupation operator $N_{f_i}$ is diagonal in this basis and
+has eigenvalue $1$ precisely when $i\in S$. Hence
+\[
+ \langle f_i,\gamma_\rho f_i\rangle
+ =\Tr(\rho N_{f_i})=\sum_{S\ni i}t_S.
+\]
+The off-diagonal entries of $\gamma_\rho$ vanish in the chosen
+eigenbasis. This proves \eqref{ext:diagonal-mixture}.
+In particular, for every unit $u$ at once,
+\[
+ a_\rho(u)=\sum_{|S|=p}t_S\langle u,\pi_{W_S}u\rangle.
+\]
+The projections on the right have the same rank, so their quadratic
+readouts have the same spherical distribution. Lemma~\ref{ext:common-mixture}
+gives \eqref{ext:occupation-order}.
+
+For $S\ne T$, the Hermitian operator $\pi_{W_S}-\pi_{W_T}$ is
+nonzero. Its quadratic form is nonzero somewhere on the unit sphere,
+and therefore on a nonempty open set of positive spherical measure.
+The strict equality criterion excludes two such positive-weight
+indices. The remaining diagonal entry of $\rho$ is one. Positivity
+gives
+\[
+ |\langle\Omega_S,\rho\Omega_T\rangle|^2
+ \le t_S t_T
+\]
+for all occupied subsets, so every other matrix entry is zero.
+Thus the original density is the stated pure Slater projector.
+\end{proof}
+
+\begin{remark}[The Pauli convex set]
+\label{ext:pauli-convex-set}
+The set of Hermitian matrices satisfying \eqref{ext:pauli-bounds} is
+the convex hull of rank-$p$ orthogonal projections. To see this,
+diagonalize such a matrix. The vertices of
+$\{x\in[0,1]^n:\sum_i x_i=p\}$ are the zero-one vectors with $p$
+ones: a nonintegral point has at least two nonintegral coordinates,
+which admit opposite small perturbations preserving the sum.
+Rotating a vertex decomposition back proves the assertion.
+For the density in the theorem, \eqref{ext:diagonal-mixture} supplies
+this decomposition directly from its occupation probabilities and
+also yields the full-density equality criterion.
+\end{remark}
+
+\subsection{The conditional measurement}
+
+For a unit vector $u$, put
+$A_\rho(u)=c(u)\rho c(u)^*$. It is positive with trace
+$a_\rho(u)$. The orthogonal splitting
+\[
+ \Lambda^{p-1}E
+ =\Lambda^{p-1}(u^\perp)
+ \mathbin{\oplus}
+ u\wedge\Lambda^{p-2}(u^\perp)
+\]
+shows that $\ker c(u)$ in degree $p-1$ is
+$\Lambda^{p-1}(u^\perp)$; the second summand is absent when $p=1$.
+Since $c(u)^2=0$, the range of $A_\rho(u)$ lies in this kernel.
+If $a_\rho(u)>0$, then
+\begin{equation}
+ \rho_u=\frac{A_\rho(u)}{a_\rho(u)}
+ \label{ext:conditional-density}
+\end{equation}
+is a density on $\Lambda^{p-1}(u^\perp)$.
+For a unit Slater vector $\xi$ in that space, adjointness gives
+\begin{equation}
+ \langle u\wedge\xi,\rho(u\wedge\xi)\rangle
+ =\langle\xi,A_\rho(u)\xi\rangle
+ =a_\rho(u)\langle\xi,\rho_u\xi\rangle.
+ \label{ext:conditioning}
+\end{equation}
+If $a_\rho(u)=0$, positivity and zero trace give $A_\rho(u)=0$,
+so the first expression in \eqref{ext:conditioning} is zero as well.
+
+The relevant Haar decomposition can be written without choosing a
+global frame for the bundle $u^\perp$. For $p\ge1$, take
+$\Omega_0=e_1\wedge\cdots\wedge e_p$ and embed $U(n-1)$ into
+$U(n)$ by $\iota(V)=1\oplus V$. Right invariance gives
+\begin{equation}
+ \int_{U(n)}\Phi(Q_\rho(U))\,dU
+ =\int_{U(n)}\int_{U(n-1)}
+ \Phi\bigl(Q_\rho(U\iota(V))\bigr)\,dV\,dU.
+ \label{ext:double-haar}
+\end{equation}
+For fixed $U$, the first vector is $u=Ue_1$, and the remaining wedge
+is a Haar Slater vector in $\Lambda^{p-1}(u^\perp)$. The outer
+variable $u$ is uniform on the complex unit sphere. Thus
+\eqref{ext:conditioning} applies to the same measurement appearing
+in \eqref{ext:double-haar}. In particular, the outer measure remains
+Haar probability measure; $a_\rho(u)$ enters the argument of $\Phi$.
+
+\begin{lemma}[Slater closure under contraction]
+\label{ext:coherent-closure}
+If $a_{\rho_W}(u)>0$, the conditional density $(\rho_W)_u$ is a
+pure Slater density with occupied space $W\cap u^\perp$.
+\end{lemma}
+\begin{proof}
+Here $a_{\rho_W}(u)=\|\pi_Wu\|^2$. Choose an orthonormal basis of
+$W$ whose first vector is $w_1=\pi_Wu/\|\pi_Wu\|$.
+Its other vectors $w_2,\ldots,w_p$ lie in $u^\perp$.
+Up to the phase of $\Omega_W$, formula~\eqref{ext:contraction} gives
+\[
+ c(u)\Omega_W
+ =\|\pi_Wu\|\,w_2\wedge\cdots\wedge w_p.
+\]
+Normalizing its rank-one projector proves the assertion, including
+the vacuum conditional state when $p=1$.
+\end{proof}
+
+\subsection{Induction and equality}
+
+\begin{proof}[Proof of Theorem~\ref{ext:convex-order}]
+We induct on $p$, simultaneously for all $n\ge p$. The case $p=0$
+has $Q\equiv1$. Suppose $p\ge1$ and the assertion is known in
+degree $p-1$. Let $R$ have the Husimi distribution of a Slater input
+in $\mathcal H_{p-1,n-1}$ and set $H_\Phi(t)=\E\Phi(tR)$.
+This function is continuous and convex. If $\Phi$ is strictly
+convex, then $H_\Phi$ is strictly convex, since
+\[
+ \E R=\binom{n-1}{p-1}^{-1}>0
+\]
+by \eqref{ext:resolution}.
+
+For every positive-weight conditional density \eqref{ext:conditional-density},
+apply the induction hypothesis with the test function
+$x\mapsto\Phi(a_\rho(u)x)$. Zero-weight branches give $\Phi(0)$
+on both sides. Integrating \eqref{ext:double-haar}, and then applying
+Lemma~\ref{ext:occupation-mixture}, yields
+\begin{align}
+ \int\Phi(Q_\rho)\,d\nu_{p,n}
+ &\le\E_u H_\Phi(\langle u,\gamma_\rho u\rangle)\notag\\
+ &\le\E_u H_\Phi(\langle u,\pi_Wu\rangle)
+ =\int\Phi(Q_{\rho_W})\,d\nu_{p,n}.
+ \label{ext:chain}
+\end{align}
+The final equality follows from Lemma~\ref{ext:coherent-closure}:
+each nonzero conditional Slater input has the same lower-dimensional
+Husimi distribution. The original double-Haar integrands are continuous
+on compact groups. The normalized conditional matrices are measurable
+where their continuous weights are positive, and the zero branch was
+handled separately. Boundedness therefore justifies these integrations
+and their order changes.
+
+If $\Phi$ is strictly convex and the first and last quantities in
+\eqref{ext:chain} are equal, the middle Jensen comparison is an
+equality. Lemma~\ref{ext:occupation-mixture}, applied to the strictly
+convex $H_\Phi$, forces $\rho$ to be a pure Slater density.
+Conversely, all Slater inputs have the same Husimi law by Haar
+invariance and hence attain equality. The filled sector $p=n$ is
+one-dimensional and agrees with this induction.
+\end{proof}
+
+\begin{example}[One particle]
+\label{ext:one-particle-example}
+Every unit vector in $E$ is a one-particle Slater vector. In two
+modes, a density with eigenvalues $t$ and $1-t$ has measurement
+\[
+ Q_\rho(u)=t|u_1|^2+(1-t)|u_2|^2.
+\]
+At $t=1/2$ this is the constant $1/2$; at $t=1$ it has the
+distribution of $|u_1|^2$. Both have mean $1/2$. Theorem~\ref{ext:convex-order}
+compares all continuous convex observations between these cases and
+every intermediate density. Its strict equality criterion singles
+out the rank-one inputs.
+\end{example}
+
+\begin{example}[Two-particle coherence]
+\label{ext:two-particle-example}
+In $\Lambda^2\C^4$, write $e_{ij}=e_i\wedge e_j$ and consider
+\[
+ \psi=\frac{e_{12}+e_{34}}{\sqrt2},\qquad
+ \rho_{\mathrm{mix}}
+ =\tfrac12|e_{12}\rangle\langle e_{12}|
+  +\tfrac12|e_{34}\rangle\langle e_{34}|.
+\]
+Both $|\psi\rangle\langle\psi|$ and $\rho_{\mathrm{mix}}$ have
+one-particle density $\tfrac12\Id_E$. In the standard eigenbasis,
+the shared occupation mixture places weight $1/2$ on each of
+$\{1,2\}$ and $\{3,4\}$. Their full Husimi functions differ:
+at the plane spanned by $(e_1+e_3)/\sqrt2$ and
+$(e_2+e_4)/\sqrt2$, their values are respectively $1/2$ and $1/4$.
+Thus the one-particle mixture retains exactly the information needed
+for the common conditional-weight comparison, while the conditional
+density in \eqref{ext:conditional-density} still carries the original
+coherence. Both inputs give strict inequality in
+\eqref{ext:order} for every strictly convex test.
+\end{example}

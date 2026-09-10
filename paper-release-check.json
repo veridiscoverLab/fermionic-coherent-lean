@@ -1,0 +1,76 @@
+{
+  "check": "English article publication and unchanged-proof-source packaging",
+  "utc_completed": "2026-09-10T03:21:59.728734+00:00",
+  "owner_and_commit_identity": "veridiscoverLab",
+  "proof_source_snapshot": "3164a3243fcc6cd675fa8a7493282a1f650a16d8",
+  "proof_source_and_evidence_bytes_unchanged": true,
+  "cab_snapshot_integrity": {
+    "snapshot_integrity": "PASS",
+    "fresh_replay_performed_by_this_check": false,
+    "recorded_suites": [
+      {
+        "suite": "evidence",
+        "recorded_run": "20260909T234218Z",
+        "modules": 20,
+        "declarations": 399,
+        "theorems": 309
+      },
+      {
+        "suite": "rank_evidence",
+        "recorded_run": "20260910T013918Z",
+        "modules": 33,
+        "declarations": 384,
+        "theorems": 257
+      },
+      {
+        "suite": "rank_geometry_evidence",
+        "recorded_run": "20260910T012634Z",
+        "modules": 12,
+        "declarations": 190,
+        "theorems": 150
+      }
+    ],
+    "union_modules": 52,
+    "union_declarations": 752,
+    "union_theorems": 547,
+    "full_paper_verified": false,
+    "physical_gaussian_rank_four_verified": false
+  },
+  "latex_compilation": "PASS",
+  "latex_warnings": [],
+  "pdf_pages": 28,
+  "pdf_author": "veridiscoverLab",
+  "all_fonts_embedded": true,
+  "pdf_text_bounds": "PASS",
+  "undefined_references": "NONE",
+  "local_markdown_links_checked": 61,
+  "english_documentation": "PASS",
+  "formalization_scope": {
+    "exterior_power_convex_order_and_entropy_minimizers": "end-to-end",
+    "original_eight_mode_gaussian_rank": "2 <= rank <= 4",
+    "full_normal_family_coordinate_certificate": "verified",
+    "gaussian_rank_four_end_to_end": false,
+    "full_paper_end_to_end": false
+  },
+  "fresh_lean_replay_performed_for_article_publication": false,
+  "scope": "Article compilation, layout and documentation checks; unchanged original Lean sources compared with the archived snapshot, and snapshot integrity checker rerun on CAB17. No new Lean compilation or kernel replay was needed or performed for the manuscript addition.",
+  "sha256": {
+    "README.md": "b7ff1989af27b6fa6c50f98d7c26cfb648f3a44eca06a2b4a0b15f146faaafec",
+    "TODO.md": "9102fa8330c2525ab0d92016b09733da3cc0ba69b0f1ffb85753b1a1041b0ce0",
+    "AGENTS.md": "dd70d0e25a96d18fe5149c802be3ff01fbea3f7beb4a13371981a79b58b93a1d",
+    "docs/gaussian-rank-proof.md": "47b42613b47bc49ecca028937c2981ea84033c4f78131b7bf1957e6aecd874ec",
+    "docs/theorems.md": "4d31cf3f5945a11434c26f69845069b316e8b108b41e6a107e42ecf68618363b",
+    "docs/verification.md": "c06b306e805c9438571cd976a2ad313a2307dad67d2909914bcea1033238e239",
+    "paper/README.md": "430671f69166215b87c4802cb36964e74d00181ce72c57185674cd0e9fd3c5f4",
+    "paper/main.tex": "8668c5ca83e0cb57f460028784cb86903267f24391b89306629dc88a3b85d5de",
+    "paper/references.tex": "deb858a188eaf8d7cfc329d00bf69dd835958aa67d910fb64ff66248182ac9c3",
+    "paper/sections/applications.tex": "af54ad7bf23cf741bec6b75d67a9c54919488252ac529e30791b438d17ab17d3",
+    "paper/sections/entropy.tex": "21489f05bf74aea9c8a6e6a2f3db643008c4c90793d805eaf3293efb185e1e81",
+    "paper/sections/exterior.tex": "7d7748e00753c00f3d77e807e82c4da926c7010bd11b44e42ca92930b258862e",
+    "paper/sections/formalization.tex": "27e43e81580a4d74dd9cdccfbf6b56b8e579bca71ace4c784722d93cf2f63c3f",
+    "paper/sections/gaussian-rank.tex": "bccdea245586aafac37bba05c92d06c3bbb5d961bcb9cb3679b623cadcccd9d7",
+    "paper/sections/introduction.tex": "c14be04389be01f80f57512883302054cb9fd2db40669760a55c1e2df0b00dd3",
+    "paper/sections/spin.tex": "79fce62b2fbd7ede9c55ee98cc502a3f34ef3271114c8dfa34aebac942d6392c",
+    "paper/output/pdf/fermionic-coherent-states.pdf": "b06aba87b24c9425968326010fcf487b22d527a276a0b5a49b6e616bc67890ba"
+  }
+}

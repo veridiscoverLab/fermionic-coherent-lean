@@ -1,0 +1,84 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools,mathrsfs}
+\usepackage{microtype,enumitem,booktabs,array,longtable}
+\usepackage{xcolor}
+\definecolor{linkblue}{HTML}{1C4765}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue]{hyperref}
+\usepackage{bookmark}
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=2pt,topsep=4pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\E}{\mathbb E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\repourl}{https://github.com/veridiscoverLab/fermionic-coherent-lean}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\rev}{rev}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Pf}{Pf}
+\title[Fermionic coherent states]{Fermionic coherent states:\\convex order and Gaussian rank}
+\author{veridiscoverLab}
+\date{September 10, 2026}
+\subjclass[2020]{81R30, 81V74, 60E15, 14M17}
+\keywords{Fermionic coherent states, Husimi distribution, Wehrl entropy,
+Gaussian rank, pure spinors, Lean formalization}
+\hypersetup{pdftitle={Fermionic coherent states: convex order and Gaussian rank},
+pdfauthor={veridiscoverLab},pdfsubject={Convex order, fermionic entropy, and Gaussian decompositions}}
+\begin{document}
+\begin{abstract}
+We study two extremal properties of fermionic coherent states: concentration
+of their overlap distributions and length of exact Gaussian decompositions.
+For every basic exterior-power representation, the Husimi distribution of
+any density operator is dominated in convex order by that of a Slater state.
+For each strictly convex test function, equality characterizes pure Slater
+states. We prove the corresponding statements for the basic half-spin and
+odd-dimensional spin representations, obtain all positive-order
+R\'enyi--Wehrl minima, and evaluate the coherent distributions and entropy
+constants. The proof uses exact conditioning and a single convex
+decomposition shared by all measured directions. For Gaussian rank, a
+degree-eighteen relative invariant excludes every three-term decomposition
+of two copies of the four-mode magic state. This yields rank multiplicativity
+for two arbitrary nonzero four-mode even vectors. The exterior-power
+convex-order theorem, its equality cases, and the entropy minimizer theorems
+have end-to-end Lean proofs. The formalization of the Gaussian-rank theorem
+currently includes the original rank bounds two and four and the full
+normal-family polynomial certificate.
+\end{abstract}
+\maketitle
+\input{sections/introduction}
+\input{sections/exterior}
+\input{sections/spin}
+\input{sections/entropy}
+\input{sections/gaussian-rank}
+\input{sections/applications}
+\input{sections/formalization}
+\input{references}
+\end{document}

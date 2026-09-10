@@ -1,0 +1,442 @@
+\section{Husimi convex order for spin representations}
+\label{sec:spin}
+\label{spin:section}
+
+An occupation measurement removes one fermionic mode.  Its probability is
+an affine function of the Majorana covariance matrix, while its conditional
+state lives in a smaller spin representation.  Two facts make this reduction
+compatible with convex order: one probability mixture represents the
+occupation probabilities in every rotated mode, and a nonzero occupation
+projection of a pure Gaussian state remains Gaussian.  We prove both facts
+for the original Fock-space action before applying the conditional comparison.
+
+\subsection{Fock space, Majorana operators, and coherent rays}
+
+Let
+\[
+ \mathcal F_n=\Lambda^\bullet\C^n,
+ \qquad
+ \mathcal F_n^\epsilon
+ =\bigoplus_{k\equiv\epsilon\; (\mathrm{mod}\,2)}\Lambda^k\C^n,
+ \qquad \epsilon\in\{0,1\}.
+\]
+The increasing occupation wedges form an orthonormal basis, denoted by
+$|s\rangle$, $s\in\{0,1\}^n$.  Creation is exterior multiplication,
+$a_j^*\xi=e_j\wedge\xi$, and annihilation $a_j$ is its Hilbert adjoint.
+Thus $a_ja_k+a_ka_j=0$ and
+$a_ja_k^*+a_k^*a_j=\delta_{jk}\Id$.  Define
+\begin{equation}
+ c_{2j-1}=a_j+a_j^*,\qquad c_{2j}=i(a_j^*-a_j).
+ \label{spin:majorana}
+\end{equation}
+These Majorana operators are self-adjoint and satisfy
+\begin{equation}
+ c_\alpha c_\beta+c_\beta c_\alpha
+ =2\delta_{\alpha\beta}\Id.
+ \label{spin:clifford}
+\end{equation}
+For $z\in\C^{2n}$ write $c(z)=\sum_\alpha z_\alpha c_\alpha$.
+The quadratic form relevant to \eqref{spin:clifford} is the complex
+\emph{bilinear} form
+$b(z,w)=\sum_\alpha z_\alpha w_\alpha$.
+
+We use the positive real Clifford realization of $\Spin(2n)$: it consists
+of products of an even number of real unit Clifford vectors.  Its Fock
+representation sends such a product to the corresponding product of the
+$c(v)$, and is denoted by $g\mapsto U_g$.  Each factor $c(v)$ is unitary
+and reverses parity; hence $U_g$ is unitary and preserves
+$\mathcal F_n^\epsilon$.  Conjugation gives
+\begin{equation}
+ U_g c(v)U_g^*=c(R_gv),\qquad R_g\in\SO(2n).
+ \label{spin:orthogonal-action}
+\end{equation}
+The map onto $\SO(2n)$ is surjective.  Indeed,
+$c(w)c(v)c(w)=c(2\langle w,v\rangle w-v)$ for a real unit $w$;
+products of two such reflections give the plane rotations generating
+$\SO(2n)$.  Allowing odd products realizes the other component of
+$O(2n)$.  An implementing word has odd length precisely when the
+orthogonal transformation reverses orientation.  These elementary
+Clifford facts also describe the parity change of its Fock action.
+
+A \emph{pure Gaussian ray} in $\mathcal F_n^\epsilon$ means a ray in the
+$\Spin(2n)$ orbit of an occupation vector of parity $\epsilon$.
+All occupation vectors of that parity belong to the same orbit: changing
+an even number of occupation bits is effected, up to a phase, by the
+corresponding product of Majorana operators.  Choose a unit representative
+$\Omega_{n,\epsilon}$ of this orbit.  These are the coherent rays of the
+basic half-spin representation; see also \cite{hackl2021} for their
+geometric description.
+
+Each parity representation is irreducible.  To see this directly, the
+occupation projections
+\[
+ |s\rangle\langle s|
+ =\prod_{j:s_j=1}a_j^*a_j\prod_{j:s_j=0}(\Id-a_j^*a_j)
+\]
+belong to the complex span of even Majorana words.  Multiplying them by
+even words which change the occupied bits gives every matrix unit
+$|t\rangle\langle s|$ with $|s|\equiv|t|\pmod2$.  Thus the algebra
+spanned by the representation acts as the full matrix algebra on each
+sector.  In particular, with $D=2^{n-1}$ and normalized Haar measure $dg$,
+\begin{equation}
+ \int_{\Spin(2n)}|U_g\Omega_{n,\epsilon}\rangle
+       \langle U_g\Omega_{n,\epsilon}|\,dg
+ =\frac{\Id_{\mathcal F_n^\epsilon}}D.
+ \label{spin:resolution}
+\end{equation}
+The average commutes with the representation and has trace one, which
+proves the formula.  For a density operator $\rho$ on this sector let
+\[
+ Q_\rho(g)=\langle U_g\Omega_{n,\epsilon},
+                    \rho U_g\Omega_{n,\epsilon}\rangle.
+\]
+Consequently $0\le Q_\rho\le1$ and $\int Q_\rho\,dg=D^{-1}$.
+All parity indices below are interpreted modulo two.
+
+\begin{theorem}[Half-spin Husimi convex order]
+\label{spin:convex-order}
+Let $n\ge1$ and $\epsilon\in\{0,1\}$.  For every density operator
+$\rho$ on $\mathcal F_n^\epsilon$, every continuous convex function
+$\Phi:[0,1]\to\R$, and every unit pure Gaussian vector
+$\Omega\in\mathcal F_n^\epsilon$,
+\begin{equation}
+ \int_{\Spin(2n)}\Phi(Q_\rho(g))\,dg
+ \le
+ \int_{\Spin(2n)}\Phi(Q_{|\Omega\rangle\langle\Omega|}(g))\,dg.
+ \label{spin:order}
+\end{equation}
+The right-hand side is independent of $\Omega$.  If $\Phi$ is strictly
+convex, equality holds if and only if $\rho$ is a pure Gaussian projector.
+\end{theorem}
+
+\subsection{One covariance decomposition for all rotated modes}
+
+The first-mode occupation projection and the Majorana covariance are
+\begin{equation}
+ P=a_1^*a_1=\frac{\Id+i c_1c_2}{2},\qquad
+ (\Gamma_\rho)_{\alpha\beta}
+ =\frac i2\Tr\bigl(\rho[c_\alpha,c_\beta]\bigr).
+ \label{spin:covariance}
+\end{equation}
+The matrix $\Gamma_\rho$ is real and skew-symmetric, and
+$\Gamma_{U_g\rho U_g^*}=R_g\Gamma_\rho R_g^{\mathsf T}$.
+Putting $u=R_ge_1$ and $v=R_ge_2$, we have
+\begin{equation}
+ a_\rho(g):=\Tr(PU_g^*\rho U_g)
+ =\frac{1+u^{\mathsf T}\Gamma_\rho v}{2}.
+ \label{spin:occupation}
+\end{equation}
+Thus every first-mode probability is a readout of the same covariance.
+
+\begin{lemma}[Covariance mixture within one parity orbit]
+\label{spin:covariance-mixture}
+For any density operator $\rho$ on $\mathcal F_n^\epsilon$ there are
+unit pure Gaussian vectors $\chi_s$ of parity $\epsilon$ and numbers
+$t_s\ge0$, $\sum_st_s=1$, such that
+\begin{equation}
+ \Gamma_\rho=\sum_st_s\Gamma_{\chi_s},
+ \qquad
+ a_\rho(g)=\sum_st_sa_{\chi_s}(g)\quad\hbox{for every }g\in\Spin(2n).
+ \label{spin:shared-mixture}
+\end{equation}
+The probabilities $t_s$ are independent of $g$.
+\end{lemma}
+\begin{proof}
+Choose $R\in\SO(2n)$ such that
+\[
+ R\Gamma_\rho R^{\mathsf T}
+ =\operatorname{diag}(\lambda_1J,\ldots,\lambda_nJ),
+ \qquad J=\begin{pmatrix}0&1\\-1&0\end{pmatrix}.
+\]
+The usual real skew-symmetric normal form gives an orthogonal $R$.
+If its determinant is negative, reversing one coordinate changes the
+sign of one $\lambda_j$ and makes $R$ special orthogonal.  The signed
+parameters allow this adjustment within the given parity sector.
+Choose a Spin lift and let $\sigma$ be the correspondingly rotated
+density operator.  Set $t_s=\langle s,\sigma s\rangle$.  Positivity and
+trace one give a probability distribution supported on
+$|s|\equiv\epsilon\pmod2$.
+
+For an occupation vector,
+\[
+ \Gamma_{|s\rangle}
+ =\operatorname{diag}((2s_1-1)J,\ldots,(2s_n-1)J).
+\]
+The diagonal two-by-two blocks of $\Gamma_\sigma$ are determined by the
+occupation expectations $\Tr(\sigma a_j^*a_j)$; its other blocks vanish
+by construction.  It follows that
+$\Gamma_\sigma=\sum_st_s\Gamma_{|s\rangle}$.
+Rotating the occupation vectors back gives the first identity in
+\eqref{spin:shared-mixture}.  Equation~\eqref{spin:occupation} then gives
+the second identity simultaneously for every $g$.
+\end{proof}
+
+This lemma decomposes a covariance matrix.  The many-body operator
+$\rho$ itself need not be a mixture of Gaussian projectors.  What enters
+the convex comparison is the common set of probabilities in
+\eqref{spin:shared-mixture}.
+
+\subsection{Pure spinors and conditional Gaussian closure}
+
+For a nonzero $\chi\in\mathcal F_n$ define its Clifford annihilator by
+\begin{equation}
+ L_\chi=\{z\in\C^{2n}:c(z)\chi=0\}.
+ \label{spin:annihilator}
+\end{equation}
+Equation~\eqref{spin:clifford} implies that $L_\chi$ is isotropic for
+$b$, so $\dim L_\chi\le n$.  A spinor with $\dim L_\chi=n$ is called
+\emph{pure}.  This is an algebraic condition on the original Fock vector.
+For conditioning at the last mode, we use
+$\mathcal F_0^0=\C$, $\mathcal F_0^1=0$ and call the unique nonzero
+zero-mode ray Gaussian.
+
+\begin{lemma}[Gaussian orbit and occupation conditioning]
+\label{spin:gaussian-closure}
+The pure-spinor rays in $\mathcal F_n^\epsilon$ are exactly its pure
+Gaussian rays.  If $b(z,z)=0$, $\chi$ is pure, and $c(z)\chi\ne0$,
+then $c(z)\chi$ is pure.  In particular, if $P\chi\ne0$, then under
+the occupation-space identification
+$P\mathcal F_n^\epsilon=|1\rangle\otimes\mathcal F_{n-1}^{\epsilon-1}$,
+\begin{equation}
+ \frac{P\chi}{\|P\chi\|}=|1\rangle\otimes\phi
+ \label{spin:occupied-closure}
+\end{equation}
+for a unit pure Gaussian vector $\phi$ in the remaining $n-1$ modes.
+For the vacant projection $\Id-P$, the same conclusion holds with
+first factor $|0\rangle$ and remaining parity $\epsilon$.
+\end{lemma}
+\begin{proof}
+First let $L\subset\C^{2n}$ be maximal isotropic.  It has trivial
+intersection with $\overline L$: a nonzero $z$ in that intersection would
+satisfy $z,\overline z\in L$ and
+$b(z,\overline z)=\sum_\alpha|z_\alpha|^2>0$.
+Choose a Hermitian orthonormal basis
+$z_j=(p_j+iq_j)/\sqrt2$ of $L$, with $p_j,q_j$ real.
+The equations $b(z_j,z_k)=0$ and
+$\sum_\alpha\overline{(z_j)_\alpha}(z_k)_\alpha=\delta_{jk}$ show
+that $p_1,q_1,\ldots,p_n,q_n$ form a real orthonormal frame.
+An orthogonal transformation carries the standard frame to this one.
+Implement it by a product $W$ of real unit Majorana operators, as above.
+It carries
+$\operatorname{Span}\{e_{2j-1}+ie_{2j}:1\le j\le n\}$ to $L$.
+The corresponding standard Clifford operators are $2a_j$.
+
+Their joint kernel is precisely the vacuum line: in an occupation
+expansion, $a_j\xi=0$ removes every coefficient of a wedge containing
+$e_j$, and requiring this for all $j$ leaves only the scalar wedge.
+Conjugating by $W$ proves that the joint kernel associated with $L$ is
+the single line $\C W|0\rangle$.
+Its parity is the length of the implementing word modulo two.  Thus
+two such lines of the same parity are related by an even word, hence
+by $\Spin(2n)$.  Conversely, the vacuum has an $n$-dimensional
+annihilator, and orthogonal conjugation preserves that dimension.
+This proves the equality of the pure-spinor and Gaussian ray sets in
+each sector, including the odd reference orbit.
+
+Now suppose $c(z)\chi\ne0$ and $b(z,z)=0$.  Then
+$z\notin L_\chi=L_\chi^\perp$, so
+$K=L_\chi\cap z^\perp$ has dimension $n-1$.
+For $w\in K$, the Clifford relation gives
+$c(w)c(z)\chi=0$, and $c(z)^2=0$ gives the same conclusion for $w=z$.
+Therefore the annihilator of $c(z)\chi$ contains
+$K\oplus\C z$, an $n$-dimensional isotropic space.  The resulting
+spinor is pure.
+
+Both $a_1$ and $a_1^*$ are nonzero scalar multiples of isotropic
+Clifford vectors.  If $P\chi=a_1^*a_1\chi\ne0$, both successive
+actions are nonzero, so $P\chi$ is pure.  Write its normalization as
+in \eqref{spin:occupied-closure}.  Its annihilator contains the
+$a_1^*$ direction.  Isotropy forces every annihilating vector to have
+zero $a_1$ coefficient.  After subtracting its $a_1^*$ component,
+the remaining vector lies in the last $2n-2$ Majorana directions.
+Modulo the $a_1^*$ line, the annihilator therefore gives an
+$(n-1)$-dimensional isotropic annihilator of $\phi$.
+The first part of the proof identifies $\phi$ as Gaussian.  Removing
+one occupied mode changes its parity from $\epsilon$ to $\epsilon-1$.
+For a nonzero vacant projection, use $\Id-P=a_1a_1^*$ and reverse
+the two null-vector actions.  Its annihilator contains the $a_1$
+direction; quotienting by that line proves the same statement for
+the remaining modes, now without a parity change.
+\end{proof}
+
+\subsection{Haar conditioning and strict equality}
+
+\begin{proof}[Proof of Theorem~\ref{spin:convex-order}]
+We induct on $n$, simultaneously for the two parity sectors.  For $n=1$
+each sector is one-dimensional and the assertion is immediate.  For
+$n\ge2$ we may choose the reference ray in the form
+\[
+ \Omega_{n,\epsilon}=|1\rangle\otimes\Omega_{n-1,\epsilon-1}.
+\]
+Let $G_n=\Spin(2n)$ and let $H_n=\Spin(2n-2)$ be the subgroup
+generated by the last $2n-2$ Majorana directions.  Its action on the
+occupied first-mode subspace is $\Id\otimes U_h$.  Indeed, every
+remaining odd Majorana acquires a first-mode parity sign in the tensor
+identification, and the signs cancel in each even word defining $H_n$.
+Right invariance of Haar measure gives
+\begin{equation}
+ \int_{G_n}\Phi(Q_\rho(g))\,dg
+ =\int_{G_n}\int_{H_n}
+  \Phi\!\left(\langle U_gU_h\Omega_{n,\epsilon},
+                  \rho U_gU_h\Omega_{n,\epsilon}\rangle\right)\,dh\,dg.
+ \label{spin:double-haar}
+\end{equation}
+These are integrals of continuous bounded functions on compact groups.
+
+For fixed $g$, identify the positive compression
+$P U_g^*\rho U_gP$ with $|1\rangle\langle1|\otimes A_g$.
+Its trace is $a_\rho(g)$.  If this trace is positive, define
+$\rho_g=A_g/a_\rho(g)$ on $\mathcal F_{n-1}^{\epsilon-1}$.
+The measurement value in the inner integral is exactly
+\begin{equation}
+ a_\rho(g)\,
+ \langle U_h\Omega_{n-1,\epsilon-1},
+         \rho_gU_h\Omega_{n-1,\epsilon-1}\rangle.
+ \label{spin:conditioning}
+\end{equation}
+If $a_\rho(g)=0$, positivity and trace zero give $A_g=0$, and the
+inner integral is $\Phi(0)$.  In both cases the outer measure remains
+the original Haar probability $dg$.
+
+Let $R$ have the Husimi distribution of a pure Gaussian state in the
+smaller sector, and put $H_\Phi(a)=\E\Phi(aR)$.
+This function is continuous and convex on $[0,1]$.
+The induction hypothesis, applied for each fixed $a=a_\rho(g)$,
+and Lemma~\ref{spin:covariance-mixture} give
+\begin{align}
+ \int_{G_n}\Phi(Q_\rho)\,dg
+ &\le\int_{G_n}H_\Phi(a_\rho(g))\,dg \notag\\
+ &\le\sum_st_s\int_{G_n}H_\Phi(a_{\chi_s}(g))\,dg \notag\\
+ &=\int_{G_n}H_\Phi(a_{\Omega_{n,\epsilon}}(g))\,dg
+ =\int_{G_n}\Phi(Q_{|\Omega_{n,\epsilon}\rangle
+                         \langle\Omega_{n,\epsilon}|})\,dg.
+ \label{spin:chain}
+\end{align}
+The middle inequality is the common-mixture Jensen step of
+Lemma~\ref{ext:common-mixture}, with probabilities fixed for all $g$.
+The next equality follows from Haar invariance of the Gaussian orbit.
+The last follows from Lemma~\ref{spin:gaussian-closure}: every nonzero
+conditional state of the Gaussian input is a lower-dimensional
+Gaussian state, so the inner integral has the same law at each $g$.
+Zero branches give $\Phi(0)$ on both sides.
+
+Suppose now that $\Phi$ is strictly convex.  By
+\eqref{spin:resolution}, $\E R=2^{-(n-2)}>0$, and hence $H_\Phi$
+is strictly convex.  Consider two positive-weight endpoints of the
+covariance mixture with difference $\Delta\ne0$.  Choose a real unit
+$u$ with $\Delta u\ne0$ and set
+$v=-\Delta u/\|\Delta u\|$.  Skew-symmetry implies that $u,v$ are
+orthonormal and $u^{\mathsf T}\Delta v\ne0$.
+For $n\ge2$, $\SO(2n)$ is transitive on ordered orthonormal
+two-frames: complete either frame to an oriented orthonormal basis
+and map one basis to the other.  Thus some $g$ distinguishes the two
+endpoint probabilities in \eqref{spin:occupation}.  Continuity
+preserves this difference on a nonempty open set, which has positive
+Haar measure.  Jensen's inequality in \eqref{spin:chain} is then
+strict.
+
+Equality therefore forces all positive-weight endpoints in the
+construction of Lemma~\ref{spin:covariance-mixture} to have the same
+covariance.  Distinct occupation strings have distinct diagonal
+covariances, so exactly one $t_s$ is nonzero.  For a positive operator,
+\[
+ |\langle s,\sigma t\rangle|^2
+ \le\langle s,\sigma s\rangle\langle t,\sigma t\rangle;
+\]
+this is Cauchy--Schwarz applied to $\sigma^{1/2}|s\rangle$ and
+$\sigma^{1/2}|t\rangle$.  The unique nonzero diagonal entry, together
+with trace one, forces $\sigma=|s\rangle\langle s|$.
+Undoing the Spin rotation shows that $\rho$ is a pure Gaussian
+projector.  Such projectors attain equality by Haar invariance.
+\end{proof}
+
+\begin{example}[Occupation conditioning and shared probabilities]
+\label{spin:example}
+In two modes,
+$\chi_\theta=\cos\theta\,|00\rangle+\sin\theta\,|11\rangle$
+is Gaussian: it is obtained from the vacuum by
+$\exp[\theta(a_1^*a_2^*-a_2a_1)]$, whose generator equals
+$(c_1c_3-c_2c_4)/2$.
+Its first-mode occupation probability is $\sin^2\theta$;
+whenever this is nonzero, the remaining conditional state is the
+one-mode occupied ray.
+
+In four modes, consider
+$\psi=(|0000\rangle+|1111\rangle)/\sqrt2$.
+Its covariance is zero: each mode is occupied with probability
+$1/2$, and a quadratic Majorana expression cannot connect its two
+occupation components.  Thus its covariance mixture uses the two
+fixed weights $1/2,1/2$ on the vacuum and the fully occupied state.
+For every rotated mode, \eqref{spin:shared-mixture} gives
+$a_\psi(g)=1/2$.  The state is non-Gaussian, since a Gaussian
+covariance is an orthogonal conjugate of the vacuum covariance
+and therefore squares to $-\Id$.  Its first-mode occupied
+conditional state is nevertheless the Gaussian vector $|111\rangle$.
+This example separates covariance mixing, conditional states, and
+the original many-body state.
+\end{example}
+
+\subsection{The basic odd-spin representation}
+
+The odd-dimensional spin representation has the same coherent rays
+as a half-spin representation in one larger real dimension.  Equality
+of the invariant probability measures on those rays transfers the
+distribution comparison without altering its normalization.
+
+\begin{corollary}[Odd-spin Husimi convex order]
+\label{spin:odd}
+For every $m\ge1$, the basic $2^m$-dimensional representation of
+$\Spin(2m+1)$ satisfies the conclusion of
+Theorem~\ref{spin:convex-order} on its highest-weight coherent orbit.
+For a strictly convex test function, equality holds exactly at the
+pure coherent projectors of that orbit.
+\end{corollary}
+\begin{proof}
+Set $N=m+1$.  Fix a real unit vector $e\in\R^{2N}$ and embed
+$H=\Spin(2N-1)$ as the lift of its stabilizer in $\SO(2N)$.
+The restriction of either half-spin representation to $H$ is the
+basic spin representation.  One algebraic verification uses
+\[
+ \operatorname{Cl}_{2N-1}^0(\C)
+ \simeq\operatorname{Cl}_{2N-2}(\C)
+ \simeq\operatorname{Mat}_{2^{N-1}}(\C).
+\]
+The induced unital action on a half-spin space of dimension
+$2^{N-1}$ is the standard irreducible matrix-module action.
+The Clifford identities follow by using products with one fixed
+unit generator for the first isomorphism and the creation and
+annihilation matrix units for the second.  Under a maximal torus
+of $H$, the weights are
+$(\pm\tfrac12,\ldots,\pm\tfrac12)$, each with multiplicity one:
+they are the restrictions of the half-spin weights, with the last
+sign determined by parity.  In particular, a highest-weight ray
+is an occupation Gaussian ray.
+
+For completeness we identify the entire orbit.  The proof of
+Lemma~\ref{spin:gaussian-closure} identifies maximal isotropic
+annihilators with orthogonal complex structures on $\R^{2N}$.
+For example, with $z_j=(p_j+iq_j)/\sqrt2$ one may take
+$Jp_j=q_j$ and $Jq_j=-p_j$.  This construction is independent
+of the unitary basis of the isotropic space, and the two parity
+orbits correspond to its two possible orientation components.
+
+Let $J_1,J_2$ lie in the same component.  An element of
+$\SO(2N-1)$ fixing $e$ can first send $J_1e$ to $J_2e$.
+After this conjugation the two complex structures agree on
+$\operatorname{Span}(e,J_2e)$.  On its orthogonal complement
+they induce orthogonal complex structures of the same orientation.
+Choose adapted oriented orthonormal bases there; the map between
+these bases belongs to $\SO(2N-2)$ and conjugates one restricted
+complex structure to the other.  Extending it by the identity on
+$\operatorname{Span}(e,J_2e)$ fixes $e$ and completes the conjugation.
+Thus $H$ is transitive on the entire half-spin coherent orbit.
+
+The pushforwards of Haar probability from $\Spin(2N)$ and from
+$H$ coincide: both are invariant probabilities on this compact
+transitive $H$-space.  Uniqueness follows by averaging any
+continuous function over $H$; the average is constant on the
+orbit, so every invariant probability has the same integral.
+The Husimi functions are those of the same rays in the same
+Hilbert space.  Theorem~\ref{spin:convex-order}, with $n=N$,
+therefore gives the asserted inequality and equality criterion.
+\end{proof}

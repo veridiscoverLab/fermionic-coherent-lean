@@ -1,0 +1,778 @@
+\section{A polynomial obstruction to three Gaussian summands}
+\label{sec:gaussian-rank}
+
+A Gaussian decomposition is an exact vector identity. Its coefficients may
+have arbitrary complex phases, and its summands may pair modes belonging to
+different prescribed blocks. Consequently, estimates on each summand in
+isolation do not determine the minimum number of summands. We use a
+polynomial of one complete Clifford Gram operator: a common change of
+coordinates transports every summand and every Gram entry simultaneously.
+
+Let $\mathcal F_n=\Lambda\C^n$ and
+$\mathcal F_n^+=\Lambda^{\mathrm{even}}\C^n$.
+Products of vectors in an exterior algebra below mean wedge products.
+For an ordered direct sum $E_A\oplus E_B$, we identify
+$\Lambda E_A\otimes\Lambda E_B$ with $\Lambda(E_A\oplus E_B)$ by
+$s\otimes t\mapsto s\wedge t$, with all $A$ modes before the $B$ modes.
+Denote by
+$\widehat{\mathcal G}_n^+$ the nonzero complex cone over the vacuum orbit of
+the compact Euclidean group $\Spin(2n)$. For $0\ne\psi\in\mathcal F_n^+$ set
+\begin{equation}
+ \chi_G(\psi)=\min\left\{r:\psi=g_1+\cdots+g_r,
+                 \quad g_j\in\widehat{\mathcal G}_n^+\right\}.
+ \label{rank:definition}
+\end{equation}
+Every even occupation vector belongs to this cone, so the minimum exists.
+Allowing odd Gaussian summands gives the same minimum for an even target:
+the sum of all odd summands is zero, and deleting them preserves the vector
+without increasing the number of terms. Nonzero scalar multiplication also
+preserves \eqref{rank:definition}, in both directions.
+
+\begin{theorem}\label{rank:main}
+For any nonzero $\psi,\phi\in\mathcal F_4^+$,
+\begin{equation}
+ \chi_G(\psi\otimes\phi)=\chi_G(\psi)\chi_G(\phi).
+ \label{rank:multiplicativity}
+\end{equation}
+Each factor has rank one or two. If both factors are non-Gaussian, their
+product has rank four. In particular, for
+\[
+ M=\frac{|0000\rangle+|1111\rangle}{\sqrt2},
+ \qquad \chi_G(M^{\otimes2})=4.
+\]
+The decomposition on the left permits arbitrary eight-mode Gaussian terms,
+including terms with pairing across the two four-mode blocks.
+\end{theorem}
+
+The last assertion is the unrestricted two-copy rank question posed by
+Cudby--Strelchuk~\cite{cudby2023}. Gaussian fidelity and extent, for which
+four-mode multiplicativity results were obtained in
+\cite{diaskoenig2024,reardon2024}, are different quantities: they retain
+normalization or coefficient costs, whereas \eqref{rank:definition} counts
+nonzero terms in an exact sum.
+
+\subsection{Clifford conventions and the physical cone}
+
+Write $E=\C^n$, $U=E^*\oplus E$, and
+\begin{equation}
+ c(f,v)=\iota_f+\varepsilon_v,\qquad
+ \varepsilon_v s=v\wedge s,\qquad q(f,v)=f(v).
+ \label{rank:clifford}
+\end{equation}
+The polar form is
+$b((f,v),(g,w))=f(w)+g(v)$, and
+\begin{equation}
+ c(u)^2=q(u)\Id,\qquad
+ c(u)c(w)+c(w)c(u)=b(u,w)\Id.
+ \label{rank:car}
+\end{equation}
+A nonzero $s\in\mathcal F_n$ is pure if
+$\Ann(s)=\{u:c(u)s=0\}$ has dimension $n$.
+The CAR make this annihilator isotropic, so its dimension is at most $n$.
+The common kernel of all contractions is the scalar vacuum line. Indeed,
+if $s=\sum_I s_Ie_I$ has a nonempty coefficient $s_I$, contracting by any
+$i\in I$ reads $s_I$, up to sign, in the $I\setminus\{i\}$ coefficient;
+no other source coefficient contributes to that same output.
+
+By Lemma~\ref{spin:gaussian-closure}, even pure-spinor rays are exactly the
+compact Gaussian vacuum rays; see also~\cite{hackl2021}.
+To specify the real form in the split coordinates, use the standard
+Hermitian basis of $E$ and define
+\[
+ \overline{(f,v)}=(v^\flat,f^\sharp),\qquad
+ v^\flat(e_i)=\overline{v_i},\qquad
+ f^\sharp=\sum_i\overline{f(e_i)}e_i.
+\]
+This exchanges the two split summands and is not coordinatewise
+conjugation on $E^*\oplus E$. It satisfies
+$b(u,\overline u)>0$ for $u\ne0$. A maximal isotropic subspace $L$ therefore
+has $L\cap\overline L=0$. An orthonormal basis of $L$ gives, by taking real
+and imaginary parts, a real orthogonal frame, and an orthogonal map sends
+the vacuum annihilator to $L$. A lift to the Pin group transports the
+corresponding annihilator. Its spinor line is unique, because transport
+back to the vacuum reduces uniqueness to the common contraction kernel.
+If that line is even, the lift has even Clifford parity and lies in Spin.
+Thus the compact orbit gives every even pure ray. The converse follows
+from the CAR transport of the annihilator. In particular,
+\begin{equation}
+ \widehat{\mathcal G}_n^+
+ =\{s\in\mathcal F_n^+:s\ne0,\ \dim\Ann(s)=n\}.
+ \label{rank:cone}
+\end{equation}
+Consequently complex Spin transformations preserve the same physical cone
+of rays. They are used below as invertible coordinate transformations,
+not as norm-preserving physical protocols.
+
+For later use, a nonzero isotropic Clifford multiplication preserves
+purity. If $s$ is pure, $q(u)=0$, and $c(u)s\ne0$, then $u\notin\Ann(s)$
+and
+\[
+ \C u+\bigl(\Ann(s)\cap u^\perp\bigr)\subseteq\Ann(c(u)s).
+\]
+The left side has dimension $n$: the restriction of $b(u,\cdot)$ to the
+maximal isotropic space $\Ann(s)$ is nonzero, and $u$ does not belong to
+that space. The upper dimension bound therefore gives purity. Two such
+multiplications prove the closure of a nonzero occupation or vacancy
+projection, consistent with Lemma~\ref{spin:gaussian-closure}.
+
+\subsection{The whole vacuum chart from elementary units}
+
+Fix an ordered basis $e_0,\ldots,e_{n-1}$ and dual basis
+$f_0,\ldots,f_{n-1}$. Write $\varepsilon_i=\varepsilon_{e_i}$ and
+$\iota_i=\iota_{f_i}$. Let $[s]_0$ denote the vacuum coefficient and
+$[s]_2\in\Lambda^2E$ the degree-two homogeneous component.
+Suppose $s$ is pure and $a=[s]_0\ne0$. Projection of $\Ann(s)$ to $E^*$
+is injective: if $\varepsilon_v s=0$, its degree-one part is $av=0$.
+Since both spaces have dimension $n$, the projection is an isomorphism.
+It defines a linear map $\mathcal D:E^*\to E$ with
+\begin{equation}
+ (\iota_f+\varepsilon_{\mathcal D f})s=0\quad(f\in E^*),\qquad
+ f(\mathcal D g)+g(\mathcal D f)=0.
+ \label{rank:graph}
+\end{equation}
+The second identity follows from the CAR. Applying a second contraction
+and then reading degree zero gives
+\begin{equation}
+ g(\mathcal D f)=-\frac{[\iota_g\iota_fs]_0}{a}.
+ \label{rank:graph-coordinates}
+\end{equation}
+These are equations on the complete original vector, not just its first
+two homogeneous components.
+
+\begin{lemma}[Elementary chart reconstruction]\label{rank:chart}
+For $i<j$ define
+\[
+ a_{ij}=f_i(\mathcal D f_j)=-f_j(\mathcal D f_i),\qquad
+ \mathcal U(\mathbf a)=\prod_{i<j}(\Id+a_{ij}\varepsilon_i\varepsilon_j),
+ \qquad
+ \Omega(\mathbf a)=\prod_{i<j}(1+a_{ij}e_ie_j).
+\]
+Here $\mathbf a=(a_{ij})_{i<j}$ is the coefficient array, distinct from
+the vacuum coefficient $a$. The factors may be taken in any fixed order.
+Then $s=a\Omega(\mathbf a)$.
+More generally, vectors annihilated by the same graph
+$\iota_f+\varepsilon_{\mathcal D f}$ and having the same vacuum coefficient
+are equal.
+\end{lemma}
+\begin{proof}
+Put $N_{ij}=\varepsilon_i\varepsilon_j$. The creation CAR give
+$N_{ij}^2=0$, $[N_{ij},\varepsilon_v]=0$, and
+$[N_{ij},N_{k\ell}]=0$, including repeated-index cases.
+Thus $U_{ij}(z)=\Id+zN_{ij}$ has inverse $\Id-zN_{ij}$.
+For $h_{ij}(f)=f(e_i)e_j-f(e_j)e_i$, the mixed CAR give
+\[
+ [\iota_f,N_{ij}]=\varepsilon_{h_{ij}(f)},\qquad
+ N_{ij}\varepsilon_{h_{ij}(f)}
+ =\varepsilon_{h_{ij}(f)}N_{ij}=0.
+\]
+It follows, on all of $\mathcal F_n$, that
+\begin{equation}
+ U_{ij}(z)^{-1}\iota_fU_{ij}(z)
+ =\iota_f+z\varepsilon_{h_{ij}(f)}.
+ \label{rank:elementary-shear}
+\end{equation}
+Set $h_{\mathbf a}(f)=\sum_{i<j}a_{ij}h_{ij}(f)$.
+Evaluating on the dual basis and using \eqref{rank:graph}, including its
+zero diagonal, gives $h_{\mathbf a}=-\mathcal D$.
+All factors commute with every creator, so composing
+\eqref{rank:elementary-shear} gives
+\[
+ \iota_f\mathcal U(\mathbf a)^{-1}s
+ =\mathcal U(\mathbf a)^{-1}(\iota_f+\varepsilon_{\mathcal D f})s=0.
+\]
+Each factor and its inverse preserve degree zero. The common contraction
+kernel is the vacuum line, hence
+$\mathcal U(\mathbf a)^{-1}s=a\,1$, and multiplication by
+$\mathcal U(\mathbf a)$ proves
+the assertion. Applying the same inverse product to two vectors proves
+uniqueness. No expansion of their higher-degree components is needed.
+\end{proof}
+
+For reference, if $\omega=\sum_{i<j}a_{ij}e_ie_j$, then
+$\Omega(\mathbf a)=\exp(\omega)$: the degree-two monomials commute and square to
+zero, so their finite exponentials multiply to the displayed product.
+The proof of Lemma~\ref{rank:chart} does not require a general exponential
+construction.
+
+For $g\in\GL(E)$ the original exterior map satisfies
+\begin{equation}
+ \iota_f\Lambda g=\Lambda g\,\iota_{f\circ g},\qquad
+ \varepsilon_{gv}\Lambda g=\Lambda g\,\varepsilon_v.
+ \label{rank:gl-intertwining}
+\end{equation}
+The first identity follows by induction on exterior monomials from the
+contraction rule, and the second from multiplicativity.
+Write $\Omega_{\mathcal D}$ for the chart product with coefficients
+$a_{ij}=f_i(\mathcal D f_j)$, and let $g^\vee:E^*\to E^*$ denote the
+algebraic dual map $g^\vee f=f\circ g$, with no complex conjugation.
+The new graph is
+\begin{equation}
+ \mathcal D^g(f)=g\bigl(\mathcal D(f\circ g)\bigr).
+ \label{rank:graph-gl}
+\end{equation}
+Both $\Lambda g\Omega_{\mathcal D}$ and $\Omega_{\mathcal D^g}$ have this graph and vacuum
+coefficient one. Lemma~\ref{rank:chart} therefore proves their equality.
+In particular a nondegenerate alternating graph can be reduced to its
+standard form by a single $g$ acting on the whole Fock space.
+
+Here is an explicit linear-algebra justification of that reduction.
+For a nondegenerate alternating form choose $u,v$ with pairing one.
+Their span is nondegenerate. Subtracting the appropriate multiples of
+$u,v$ from any vector makes it orthogonal to both, giving the direct sum
+of this plane and its orthogonal complement. The complement is
+nondegenerate, since a vector orthogonal to both summands is orthogonal
+to the whole space. Repeating produces a symplectic basis. Applied to the
+alternating tensor $\mathcal D:E^*\to E$, this is exactly the congruence
+$\mathcal D\mapsto g\mathcal D g^\vee$ in \eqref{rank:graph-gl}.
+
+\begin{example}\label{rank:four-mode-example}
+The four-mode vector $1+\kappa e_0e_1e_2e_3$, with $\kappa\ne0$, is not
+Gaussian. Its degree-two component vanishes, so
+\eqref{rank:graph-coordinates} would force $\mathcal D=0$ if it were pure;
+Lemma~\ref{rank:chart} would then make it a vacuum multiple. It is a sum
+of two Gaussian occupation vectors, and hence has rank two.
+Its two-copy expansion has four terms, but this observation alone does
+not rule out a shorter expansion using eight-mode Gaussians.
+\end{example}
+
+\subsection{A relative invariant of the complete Clifford Gram}
+
+For the remainder of the rank-four proof let $n=8$ and
+$\mathrm{vol}=e_0\cdots e_7$. Fix the bilinear Chevalley convention
+\begin{equation}
+ \mathcal B(s,t)=[s\wedge\rev(t)]_{\mathrm{vol}},\qquad
+ \rev|_{\Lambda^jE}=(-1)^{j(j-1)/2}\Id.
+ \label{rank:chevalley}
+\end{equation}
+Reversal acts on the second leg; no complex conjugation is present.
+For an ordered subset $I\subseteq\{0,\ldots,7\}$,
+\begin{equation}
+ \mathcal B(e_I,e_{I^c})=(-1)^{\sum_{i\in I}(i+1)}.
+ \label{rank:chevalley-sign}
+\end{equation}
+Indeed, for $|I|=k$ the wedge-order sign has exponent
+$\sum_{i\in I}i-k(k-1)/2$, and reversing the second leg adds
+$(8-k)(7-k)/2$. Their sum is congruent to
+$\sum_{i\in I}(i+1)$ modulo two. This calculation applies in every degree.
+The form is symmetric and nondegenerate.
+
+For every Clifford direction $u$, the exterior multiplication and
+contraction rules give
+\begin{equation}
+ \mathcal B(c(u)s,t)=-\mathcal B(s,c(u)t).
+ \label{rank:bilinear-adjoint}
+\end{equation}
+For creation, move the created vector past the other seven factors in a
+nonzero top-degree term; for contraction, apply contraction to the
+identically zero degree-nine exterior product. Both yield the displayed
+minus sign with \eqref{rank:chevalley}. Consequently an elementary
+creation unit, or its two-contraction counterpart, preserves $\mathcal B$:
+its generator is skew-adjoint for $\mathcal B$ and squares to zero.
+Also $\tau_i=\varepsilon_i+\iota_{f_i}$ has $\tau_i^2=\Id$ and multiplier
+$-1$, so an even product of the $\tau_i$ preserves $\mathcal B$.
+Finally,
+\begin{equation}
+ \mathcal B(\Lambda g\,s,\Lambda g\,t)
+       =\det(g)\mathcal B(s,t).
+ \label{rank:gl-multiplier}
+\end{equation}
+This follows by applying $\Lambda g$ to the top exterior product.
+
+Let $W=\Lambda^2U$ and equip it with
+\[
+ G(u\wedge v,w\wedge z)=b(u,w)b(v,z)-b(u,z)b(v,w).
+\]
+Define the whole bivector source map and its raised Gram by
+\begin{equation}
+ J_\psi(u\wedge v)=\tfrac12[c(u),c(v)]\psi,\qquad
+ H_\psi(\xi,\zeta)=\mathcal B(J_\psi\xi,J_\psi\zeta),\qquad
+ A_\psi=G^{-1}H_\psi.
+ \label{rank:full-gram}
+\end{equation}
+All $\binom{16}{2}=120$ bivector directions occur here.
+The matrix of $A_\psi$ is $G^{-1}J_\psi^{\mathsf T}\mathcal BJ_\psi$;
+it need not be Hermitian or positive. Set
+\begin{align}
+ s_\psi&=\tfrac12\mathcal B(\psi,\psi),&
+ t_k(\psi)&=\Tr(A_\psi^k),\label{rank:moments}\\
+ F_{16}(\psi)&=576s_\psi^2t_6(\psi)-7t_4(\psi)^2
+ -18960s_\psi^4t_4(\psi)+4205376s_\psi^8,&
+ P_{18}(\psi)&=s_\psi F_{16}(\psi).
+ \label{rank:polynomial}
+\end{align}
+These are homogeneous polynomials of degrees $16$ and $18$ in $\psi$.
+
+\begin{lemma}\label{rank:covariance}
+Suppose invertible maps $T$ on $\mathcal F_8$ and $R$ on $U$ satisfy
+\[
+ Tc(u)T^{-1}=c(Ru),\qquad R^*b=b,\qquad
+ \mathcal B(Ts,Tt)=\lambda\mathcal B(s,t),\quad\lambda\ne0.
+\]
+With $L=\Lambda^2R$, one has
+\begin{equation}
+ A_{T\psi}=\lambda LA_\psi L^{-1},\qquad
+ F_{16}(T\psi)=\lambda^8F_{16}(\psi),\qquad
+ P_{18}(T\psi)=\lambda^9P_{18}(\psi).
+ \label{rank:relative-invariant}
+\end{equation}
+The elementary units above, even particle--hole products, and $\Lambda g$
+all satisfy these hypotheses, with their stated form multipliers.
+\end{lemma}
+\begin{proof}
+The complete source map obeys $J_{T\psi}=TJ_\psi L^{-1}$.
+The transformation of $H$ follows by applying the same form identity to
+both of its arguments. Since $L$ preserves $G$, raising an index gives
+the first formula. Hence $s_{T\psi}=\lambda s_\psi$ and
+$t_k(T\psi)=\lambda^k t_k(\psi)$; substitution gives the other formulas.
+For elementary units the Clifford conjugation is precisely the shear
+\eqref{rank:elementary-shear}, whose graph is alternating, so it preserves
+$q$ and $b$. Two-contraction units are dual. The CAR give the orthogonal
+reflection, up to an overall minus sign, for $\tau_i$. Equation
+\eqref{rank:gl-intertwining} gives the direction change
+$(f,v)\mapsto(f\circ g^{-1},gv)$ for $\Lambda g$. The form multipliers
+were established in \eqref{rank:bilinear-adjoint}--\eqref{rank:gl-multiplier}.
+\end{proof}
+
+\subsection{The two complete coordinate evaluations}
+
+We give the coordinates explicitly so that the finite identities below
+can be checked independently of a spectral or invariant-theoretic
+classification. Write $u_i^+=(0,e_i)$ and $u_i^-=(f_i,0)$ in $U$, and
+order the sixteen directions as
+$z_0,\ldots,z_{15}=(u_0^+,\ldots,u_7^+,u_0^-,\ldots,u_7^-)$.
+An integer $0\le m<256$ encodes an occupied subset through its bits $m_i$;
+$e_m$ is the increasing exterior product on that subset. Put
+\[
+ \kappa(m)=(-1)^{\sum_{i=0}^7(i+1)m_i},\qquad
+ X_i(m)=m\mathbin{\mathrm{xor}}2^{i\bmod8}.
+\]
+If $i<8$, let $\gamma_i(m)=(-1)^{\sum_{r<i}m_r}$ when $m_i=0$ and zero
+otherwise. If $i\ge8$, use the same sign with $i$ replaced by $i-8$, and
+require $m_{i-8}=1$. Thus $c(z_i)e_m=\gamma_i(m)e_{X_i(m)}$.
+For a sorted pair $\alpha=(i,j)$ set
+\[
+ X_\alpha=X_iX_j,\qquad
+ j_\alpha(m)=2\gamma_j(m)\gamma_i(X_j(m))
+                   -\mathbf1_{j=i+8}.
+\]
+Then $2J_{e_m}(\alpha)=j_\alpha(m)e_{X_\alpha(m)}$.
+Replace each direction in $\alpha$ by its dual, reorder increasingly,
+and call the resulting pair $\alpha^\vee$ and the reordering sign
+$\epsilon_\alpha$. The inverse of $G$ is exactly this signed dual-pair
+operation. Therefore, for $\psi=\sum_{m=0}^{255}\psi_me_m$,
+\begin{equation}
+ (A_\psi)_{\alpha\beta}
+ =\frac{\epsilon_\alpha}{4}\sum_{m=0}^{255}
+ \psi_m j_{\alpha^\vee}(m)\kappa(X_{\alpha^\vee}(m))
+ j_\beta(v)\psi_v,\qquad
+ v=X_\beta\bigl(255\mathbin{\mathrm{xor}}X_{\alpha^\vee}(m)\bigr).
+ \label{rank:entry-formula}
+\end{equation}
+This is just \eqref{rank:full-gram} expanded in the original occupation
+basis. The factor $1/4$ accounts for the two occurrences of $2J$.
+Every encoded subset and every direction in this formula stays in the original
+finite domain.
+
+\begin{lemma}\label{rank:normal-certificate}
+Let
+\[
+ \Omega_*=(1+e_0e_1)(1+e_2e_3)(1+e_4e_5)(1+e_6e_7),
+ \qquad \eta=\alpha1+\beta\mathrm{vol}+\gamma\Omega_*.
+\]
+For arbitrary $\alpha,\beta,\gamma\in\C$, set
+$x=\alpha\beta$, $y=\alpha\gamma$, $z=\beta\gamma$,
+$s=x+y+z$, and $w=xyz$. Then
+\begin{align}
+ s_\eta&=s,\label{rank:normal-halfpair}\\
+ t_4(\eta)&=312s^4-1728sw,\label{rank:normal-t4}\\
+ t_6(\eta)&=4152s^6-69984s^3w+36288w^2.
+ \label{rank:normal-t6}
+\end{align}
+In particular $F_{16}(\eta)=P_{18}(\eta)=0$.
+\end{lemma}
+\begin{proof}
+Here is a complete common basis for the matrix calculation. Partition the
+mode indices into $B_r=\{2r,2r+1\}$, $0\le r<4$, and put
+$\bar u=u\mathbin{\mathrm{xor}}1$, $\sigma_u=(-1)^u$.
+There are eight zero directions
+\[
+ u_{2r}^+\wedge u_{2r+1}^-,\quad
+ u_{2r+1}^+\wedge u_{2r}^-\qquad(0\le r<4).
+\]
+For each $r<s$, $i\in B_r$, $j\in B_s$, take the signed quartet
+\begin{equation}
+ \left(-u_i^+\wedge u_j^+,
+ -\sigma_i u_j^+\wedge u_{\bar i}^-,
+ \sigma_j u_i^+\wedge u_{\bar j}^-,
+ -\sigma_i\sigma_j u_{\bar i}^-\wedge u_{\bar j}^-\right).
+ \label{rank:quartet}
+\end{equation}
+These give 24 four-dimensional blocks. The remaining sixteen directions
+are, for each $r$, the four entries
+\begin{equation}
+ \left(u_{2r}^+\wedge u_{2r+1}^+,\quad
+ u_{2r}^+\wedge u_{2r}^-,\quad
+ u_{2r+1}^+\wedge u_{2r+1}^-,\quad
+ u_{2r}^-\wedge u_{2r+1}^-\right).
+ \label{rank:central-basis}
+\end{equation}
+This list contains every pair of the sixteen split directions exactly once.
+Substitution in \eqref{rank:entry-formula} gives the following whole matrix:
+\begin{equation}
+ A_\eta\simeq0_8\oplus T^{\oplus24}\oplus
+       \bigl(T\otimes(I_4-P)+R\otimes P\bigr),\qquad
+ P=\tfrac14\mathbf1\mathbf1^{\mathsf T},
+ \label{rank:normal-blocks}
+\end{equation}
+where the last tensor factors index the four blocks in
+\eqref{rank:central-basis}, and
+\begin{equation}
+ T=\begin{pmatrix}
+ s&z&z&2z\\-y&0&0&-z\\-y&0&0&-z\\2y&y&y&s
+ \end{pmatrix},\qquad
+ R=\begin{pmatrix}
+ s&-3z&-3z&-6z\\3y&2s&2s&3z\\3y&2s&2s&3z\\-6y&-3y&-3y&s
+ \end{pmatrix}.
+ \label{rank:TR}
+\end{equation}
+The square terms vanish for a structural reason. At the vacuum,
+$J_1(W)\subseteq\Lambda^0E\oplus\Lambda^2E$, whose Chevalley pairing
+with itself is zero in dimension eight. Hence $A_1=0$.
+The even particle--hole product sends $1$ to $\mathrm{vol}$, and the
+elementary creation product sends $1$ to $\Omega_*$.
+Lemma~\ref{rank:covariance} gives $A_{\mathrm{vol}}=A_{\Omega_*}=0$.
+Thus the coefficients of $\alpha^2,\beta^2,\gamma^2$ in
+\eqref{rank:entry-formula} are zero. The coefficients of
+$\alpha\beta,\alpha\gamma,\beta\gamma$ include both source orders.
+The only nonzero source subsets are unions of the four pairs $B_r$.
+On \eqref{rank:quartet}, evaluating these three coefficients yields $T$;
+on the central directions $(i,r),(j,s)$ it yields
+$T_{ij}\mathbf1_{r=s}+(R_{ij}-T_{ij})/4$; all other cross blocks vanish.
+These rules, together with the eight zero directions, specify all
+$120^2$ entries. Pair-block permutations reduce the quartet substitution
+to the four parity choices for $i,j$; their signs are precisely those in
+\eqref{rank:quartet}.
+
+Since $P$ and $I-P$ are complementary projections of ranks one and three,
+\eqref{rank:normal-blocks} gives, for every positive integer $k$,
+\[
+ t_k(\eta)=27\Tr(T^k)+\Tr(R^k).
+\]
+The trace computation can be performed with the following matrix
+identities, obtained by multiplying \eqref{rank:TR}:
+\begin{align*}
+ T^4&=2sT^3-s^2T^2+4wT,\\
+ R^4&=6sR^3-9s^2R^2+(4s^3-108w)R.
+\end{align*}
+The initial traces are
+\[
+ \begin{array}{c|ccc}
+       &\Tr(\cdot)&\Tr((\cdot)^2)&\Tr((\cdot)^3)\\\hline
+ T&2s&2s^2&2s^3+12w\\
+ R&6s&18s^2&66s^3-324w
+ \end{array}.
+\]
+Multiplying each recurrence by $I,T,T^2$ or $I,R,R^2$ and taking traces
+gives \eqref{rank:normal-t4}--\eqref{rank:normal-t6}.
+Equation \eqref{rank:chevalley-sign} gives
+$\mathcal B(\eta,\eta)=2(\alpha\beta+\alpha\gamma+\beta\gamma)$.
+Substituting these three expressions in \eqref{rank:polynomial} and
+collecting powers of $s,w$ gives zero. All formulas are polynomial, so no
+parameter is required to be nonzero.
+\end{proof}
+
+\begin{lemma}\label{rank:target-certificate}
+For
+\[
+ v_A=e_0e_1e_2e_3,\quad v_B=e_4e_5e_6e_7,\quad
+ \Psi=(1+v_A)(1+v_B),
+\]
+one has
+\begin{equation}
+ s_\Psi=2,\qquad t_4(\Psi)=3648,\qquad t_6(\Psi)=57408,
+ \qquad P_{18}(\Psi)=18063360\ne0.
+ \label{rank:target-values}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use \eqref{rank:entry-formula}, now with occupied-subset encodings $0,15,240,255$,
+all with coefficient one. The 64 directions between the two
+four-mode split spaces form an identity block. In each four-mode block,
+the twelve directions $u_i^+\wedge u_j^-$ with $i\ne j$ give zero.
+Pair each $u_i^+\wedge u_j^+$ with $u_k^-\wedge u_\ell^-$, where $k<\ell$ are
+the complementary two indices of that four-mode block. Its matrix is
+\[
+ \begin{pmatrix}2&2(-1)^{i+j}\\2(-1)^{i+j}&2\end{pmatrix}.
+\]
+There are twelve such two-dimensional blocks in total. Finally the four
+directions $u_i^+\wedge u_i^-$ in each block have the all-ones matrix of
+size four. Entries between these blocks vanish by the same formula.
+Thus the eigenvalues of $A_\Psi$ are $1$ with multiplicity $64$, $4$ with
+multiplicity $14$, and $0$ with multiplicity $42$. Hence
+$t_k(\Psi)=64+14\cdot4^k$ for $k>0$. The four complementary source pairs
+give $\mathcal B(\Psi,\Psi)=4$. Substitution in
+\eqref{rank:polynomial} proves \eqref{rank:target-values}.
+\end{proof}
+
+\subsection{All three summands, including the boundary}
+
+The generic normal configuration in Lemma~\ref{rank:normal-certificate}
+has the common symplectic symmetry studied by
+Manivel~\cite[Proposition~1]{manivel2009}. To exclude an arbitrary
+three-term decomposition, one must also treat third terms outside that
+nondegenerate chart. The following construction does so on the original
+vector by a polynomial specialization.
+
+\begin{lemma}\label{rank:common-pair}
+If $g_1,g_2$ are nonzero even pure spinors and
+$\mathcal B(g_1,g_2)\ne0$, a common invertible transformation of the kinds
+in Lemma~\ref{rank:covariance} sends them to
+$\alpha1,\beta\mathrm{vol}$ with $\alpha\beta\ne0$.
+The transformation acts simultaneously on any other summands.
+\end{lemma}
+\begin{proof}
+Choose a nonzero coefficient $(g_1)_I$. The set $I$ is even.
+The product $\tau_I$ toggles precisely the occupation set $I$, so the
+vacuum coefficient of $\tau_Ig_1$ is $\pm(g_1)_I\ne0$.
+Apply its inverse chart unit from Lemma~\ref{rank:chart} to the whole
+configuration. The first term is now $\alpha1$.
+The second term has top coefficient $\beta\ne0$, since the common
+transformation has preserved $\mathcal B$.
+
+Let $C=\tau_0\cdots\tau_7$. The CAR give $C^2=\Id$ and
+$C1=\mathrm{vol}$, $C\mathrm{vol}=1$.
+The vector $Cg_2'$ has vacuum coefficient $\beta$, so
+$Cg_2'=\beta\mathcal U1$ for a chart unit $\mathcal U$.
+Consequently $g_2'=\beta C\mathcal UC\,\mathrm{vol}$.
+Conjugation by $C$ changes two-creation factors into two-contraction
+factors. Their inverse product fixes the vacuum and takes the second
+term to $\beta\mathrm{vol}$. Apply that same product to all terms.
+\end{proof}
+
+The first part of this proof also sends any even pure spinor to a
+nonzero vacuum multiple. Its self-pairing is therefore zero, by the
+nonzero form multiplier and $\mathcal B(1,1)=0$.
+
+\begin{proposition}\label{rank:three-vanishing}
+For every three nonzero even pure spinors $g_1,g_2,g_3\in\mathcal F_8^+$,
+\[
+ P_{18}(g_1+g_2+g_3)=0.
+\]
+\end{proposition}
+\begin{proof}
+Put $x=g_1+g_2+g_3$. If $s_x=0$, the assertion follows from
+\eqref{rank:polynomial}. Otherwise, since all self-pairings vanish,
+some pair has nonzero pairing. By Lemma~\ref{rank:common-pair} and
+relative covariance it suffices to consider
+\[
+ x=\alpha1+\beta\mathrm{vol}+s,
+\]
+where $s$ is an arbitrary nonzero even pure spinor.
+
+Choose a nonzero coefficient $s_I$, order $I$ increasingly, and divide it
+into $k=|I|/2$ successive pairs $(i_r,j_r)$ with $i_r<j_r$.
+Define the actual polynomial curve
+\begin{equation}
+ h(t)=\prod_{r=1}^k(\Id+t\iota_{f_{j_r}}\iota_{f_{i_r}})s,
+ \qquad a(t)=[h(t)]_0.
+ \label{rank:curve-first}
+\end{equation}
+The factors commute, square-zero generators give their inverses by
+$t\mapsto-t$, and their Clifford shears preserve purity. Thus every
+$h(t)$ is nonzero and pure. The coefficient of $t^k$ in $a(t)$ is
+exactly $s_I$: all chosen contractions produce a vacuum only from the
+complete original support $I$, and the successive ordered-pair convention
+gives sign $+1$. Hence $a(t)$ is a nonzero polynomial. If $k=0$, this
+statement simply reads $a(t)=s_\varnothing\ne0$.
+
+Put $\omega_*=e_0e_1+e_2e_3+e_4e_5+e_6e_7$ and
+\begin{equation}
+ r(t,u)=\prod_{j=0}^3(\Id+u\varepsilon_{2j}\varepsilon_{2j+1})h(t).
+ \label{rank:curve-second}
+\end{equation}
+This is again nonzero and pure for every $(t,u)$, and $r(0,0)=s$.
+Its first two even components are
+\[
+ [r(t,u)]_0=a(t),\qquad [r(t,u)]_2=[h(t)]_2+u\,a(t)\omega_*.
+\]
+Let $K(\omega):E^*\to E$ be $f\mapsto\iota_f\omega$ and
+$J=K(\omega_*)$, an invertible alternating matrix. The polynomial
+\begin{equation}
+ \Delta(t,u)=a(t)\det\bigl(K([h(t)]_2)+u\,a(t)J\bigr)
+ \label{rank:discriminant}
+\end{equation}
+is nonzero: its coefficient of $u^8$ is $a(t)^9\det J$, nonzero in
+$\C[t]$. At every point where $\Delta\ne0$, the vacuum coefficient is
+nonzero and \eqref{rank:graph-coordinates} gives a nondegenerate graph
+\[
+ \mathcal D=-K\bigl([r(t,u)]_2/a(t)\bigr).
+\]
+The symplectic-basis construction after \eqref{rank:graph-gl} gives a
+$g\in\GL(E)$ taking it to the graph of $\Omega_*$.
+Lemma~\ref{rank:chart} and graph uniqueness then give
+$\Lambda g\,r(t,u)=a(t)\Omega_*$.
+The same $\Lambda g$ fixes $1$ and multiplies $\mathrm{vol}$ by $\det g$.
+It therefore sends the entire sum
+$\alpha1+\beta\mathrm{vol}+r(t,u)$ into the family of
+Lemma~\ref{rank:normal-certificate}. Relative covariance proves
+\[
+ F_{16}\bigl(\alpha1+\beta\mathrm{vol}+r(t,u)\bigr)=0
+ \quad\text{whenever }\Delta(t,u)\ne0.
+\]
+
+The left side is a polynomial $P(t,u)$. The product $P\Delta$ vanishes
+at every point of $\C^2$, hence is the zero polynomial: a polynomial over
+an infinite field is determined by all of its evaluations, by applying
+the one-variable root bound successively to the two variables.
+Since $\C[t,u]$ is a domain and $\Delta\ne0$, we have $P=0$.
+Evaluating at $(0,0)$ recovers the exact original $s$, so
+$F_{16}(\alpha1+\beta\mathrm{vol}+s)=0$.
+There is no limiting assertion about the existence of a decomposition;
+only the vanishing of one already defined polynomial is extended.
+\end{proof}
+
+\begin{corollary}\label{rank:two-copy}
+The vector $\Psi=(1+v_A)(1+v_B)$ has Gaussian rank four.
+\end{corollary}
+\begin{proof}
+Its four original occupation terms give the upper bound. A representation
+with at most three Gaussian terms is a representation by even pure
+spinors. If necessary, split one nonzero term into two nonzero scalar
+multiples to obtain exactly three terms. Proposition~\ref{rank:three-vanishing}
+would then give $P_{18}(\Psi)=0$, contrary to
+Lemma~\ref{rank:target-certificate}.
+\end{proof}
+
+\begin{example}\label{rank:cross-pairing-example}
+Each vector
+\[
+ \prod_{i=0}^3(1+z_i e_ie_{i+4}),\qquad z_i\in\C,
+\]
+is an eight-mode Gaussian with pairing across the two original four-mode
+blocks. Such vectors are legitimate summands in a candidate shorter
+expansion of $\Psi$. The preceding argument does not restrict them to
+block products. It transports the whole proposed sum by one common map;
+independently normalizing its three summands would destroy the sum identity
+and would not imply the polynomial obstruction.
+\end{example}
+
+\subsection{Arbitrary four-mode factors}
+
+\begin{lemma}\label{rank:four-mode-normal}
+Every nonzero four-mode even vector is either Gaussian, of rank one, or
+is carried to a nonzero scalar multiple of $1+\mathrm{vol}_4$ by an
+invertible transformation preserving the Gaussian cone. In the latter
+case its rank is two. The required transformations can be chosen as
+complex Spin transformations followed by nonzero scalars.
+\end{lemma}
+\begin{proof}
+An even particle--hole product makes a nonzero occupation coefficient a
+nonzero vacuum coefficient $a$. Write the resulting vector as
+\[
+ v=a1+\omega+b\mathrm{vol}_4,
+ \qquad \omega\in\Lambda^2\C^4.
+\]
+Choose the six elementary creation factors whose degree-two part is
+$\omega/a$, and call their product $\mathcal U$.
+There is a scalar $d$ such that
+$\mathcal U1=1+\omega/a+d\mathrm{vol}_4$.
+Positive-degree creators kill the volume, so
+\[
+ \mathcal U^{-1}v=a1+c\mathrm{vol}_4,\qquad c=b-ad.
+\]
+If $c=0$, the vector is Gaussian by \eqref{rank:cone}. If $c\ne0$, it is
+not pure by Example~\ref{rank:four-mode-example}, and has rank two.
+A diagonal $g\in\GL_4(\C)$ with $\det g=a/c$ takes it to
+$a(1+\mathrm{vol}_4)$.
+
+Here are explicit Spin lifts for all the operations, with split directions
+$u_i^+,u_i^-$ defined as above in four modes. A particle--hole operator is
+$c(u_i^++u_i^-)$, and $q(u_i^++u_i^-)=1$, so an even product belongs to
+Spin. For an elementary creation unit choose $k$ distinct from $i,j$ and
+put $v=u_k^++u_k^-$ and $w=v+u_j^+$. Both have quadratic norm one and
+are orthogonal to $u_i^+$. In the Clifford algebra,
+\[
+ (v-zu_i^+)v\,(w+zu_i^+)w
+ =(1-zu_i^+v)(1+zu_i^+w)=1+zu_i^+u_j^+.
+\]
+All four vector factors have quadratic norm one. This explicitly realizes
+$1+z\varepsilon_i\varepsilon_j$ as a Spin action. For the last diagonal
+scaling, choose $r\in\C^*$ with $r^2=a/c$. On one mode let
+$P_0=\iota_i\varepsilon_i$ and $P_1=\varepsilon_i\iota_i$.
+The two Clifford vectors $ru_i^++r^{-1}u_i^-$ and $u_i^++u_i^-$ have
+quadratic norm one. Their product acts as $r^{-1}P_0+rP_1$ and
+conjugates creation and contraction in that mode by factors
+$r^2,r^{-2}$. Its spin action is $r^{-1}\Lambda g$ for the diagonal
+$g$ used above. This supplies the claimed Spin transformation up to a
+nonzero scalar without using a classification of half-spin orbits.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{rank:main}]
+First suppose both four-mode factors are non-Gaussian.
+Lemma~\ref{rank:four-mode-normal} gives local complex Spin operations
+and scalars taking them to $1+\mathrm{vol}_4$.
+For the orthogonal direct sum $U_A\oplus U_B$, the natural map
+\begin{equation}
+ \Spin(U_A)\times\Spin(U_B)\longrightarrow\Spin(U_A\oplus U_B),
+ \qquad (x,y)\longmapsto xy,
+ \label{rank:local-spin}
+\end{equation}
+is a homomorphism because the even Clifford subalgebras commute.
+It is not asserted to be injective: $(-1,-1)$ maps to the identity.
+On the even--even Fock tensor factor its action is the usual tensor action.
+Thus the local operations induce one invertible eight-mode transformation
+preserving the entire physical Gaussian cone by \eqref{rank:cone}.
+They take $\psi\otimes\phi$ to a nonzero multiple of $\Psi$.
+Corollary~\ref{rank:two-copy} gives rank four, which is the product of
+the two local ranks.
+
+If one factor is Gaussian, use a local compact Gaussian operation and a
+scalar to make it the vacuum. Tensoring a minimal decomposition of the
+other factor with that vacuum gives one inequality. For the reverse
+inequality, take any eight-mode Gaussian decomposition of
+$1_A\otimes\phi$ and apply the same vacuum coefficient functional on all
+four modes of $A$ to every summand. This is the composition of their
+vacancy projections followed by removal of those vacuum modes.
+The nonzero projected terms remain pure by the isotropic Clifford argument
+following \eqref{rank:cone}. To see that removal preserves purity, write a
+nonzero projected vector as $1_A\otimes t_B$. The $A$-degree-one and
+$A$-degree-zero parts of its Clifford equation are independent, so
+\[
+ \Ann(1_A\otimes t_B)=E_A^*\oplus\Ann(t_B).
+\]
+Its dimension is eight, hence $\dim\Ann(t_B)=4$. Parity is even, and
+\eqref{rank:cone} makes $t_B$ a physical Gaussian vector.
+After discarding zero terms, the projected sum is a Gaussian decomposition
+of the exact original $\phi$, with no more terms. This proves equality
+of ranks. When both factors are Gaussian, their tensor product is Gaussian
+by the compact version of \eqref{rank:local-spin}. All cases of
+\eqref{rank:multiplicativity} follow.
+\end{proof}
+
+\begin{corollary}\label{rank:second-magic-state}
+For the four-mode state
+\[
+ \widetilde M=\frac{\sqrt3\,|0000\rangle
+   +\sqrt2\,|0011\rangle+\sqrt2\,|1100\rangle+|1111\rangle}{\sqrt8},
+\]
+one has $\chi_G(\widetilde M)=2$ and
+$\chi_G(\widetilde M^{\otimes2})=4$.
+\end{corollary}
+\begin{proof}
+Before normalization its degree-two part is the sum of two disjoint
+pair terms, each with coefficient $\sqrt2$. Their product has top
+coefficient $2$, whereas the product of its vacuum and top coefficients
+is $\sqrt3$. Equivalently, the reduction in
+Lemma~\ref{rank:four-mode-normal} gives
+$c=1-2/\sqrt3\ne0$. The local rank is therefore two, and
+Theorem~\ref{rank:main} gives the product rank.
+\end{proof}
+This state also occurs in the approximate-decomposition experiments of
+\cite{cudby2023}. The corollary concerns exact rank; it does not determine
+the minimum number of Gaussian terms at a positive approximation error.
+
+The current Lean development verifies the original rank bounds
+$2\le\chi_G(\Psi)\le4$ and the complete finite-coordinate identities above;
+it does not yet formalize the rank-four theorem end to end.
+The precise verified statements and remaining identifications are described
+in Section~\ref{sec:formalization}.

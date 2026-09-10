@@ -1,0 +1,114 @@
+\section{Formal verification}
+\label{sec:formalization}
+
+The Lean development accompanies the proofs above and records which parts
+have been checked on their original mathematical objects. Its source and
+verification evidence are available in the repository
+\cite{repository2026}. The verified source snapshot is
+\href{https://github.com/veridiscoverLab/fermionic-coherent-lean/tree/3164a3243fcc6cd675fa8a7493282a1f650a16d8}{\texttt{3164a3}};
+the English manuscript was added subsequently without changing those proof
+sources.
+
+\subsection{End-to-end exterior-power theorems}
+
+The formalization of Theorem~\ref{ext:convex-order} starts with
+$\Lambda^p\C^n$, its actual unitary action, density operators, and normalized
+Haar measure. It constructs creation and contraction, the conditional
+density on the orthogonal complement, the double-Haar identity, and the
+common occupation mixture. The induction and the strict equality argument
+are proved from these constructions. In particular, the statement covers
+every $0\le p\le n$, all mixed inputs, and every continuous convex test on
+$[0,1]$; a strictly convex test has equality exactly at pure Slater
+densities. No conditional-measure identity or full-density rigidity
+statement is assumed as a separate hypothesis.
+
+The formal Slater measure is the pushforward to the actual orbit of
+rank-one Slater projectors. Its invariance, independence of the reference,
+and agreement with group integration are proved. The entropy results then
+use this same measurement. They include the sector dimension $\binom np$,
+the normalized first moment, all positive real moments, the Wehrl minimum,
+and the R\'enyi--Wehrl minimum for every real $q>0$, $q\ne1$, together with
+the same equality characterization. These minimizer theorems are end to
+end. Their coherent comparison values are defined by integrals; the
+Beta-product evaluations, explicit Gamma products, harmonic-number
+constants, and the limit as $q\to1$ have not been formalized.
+
+The principal declarations are listed below. Each namespace has the prefix
+\texttt{Fermionic.}; the repository prints the full types of all declarations,
+including their quantifiers and domain assumptions.
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.28\linewidth}p{0.66\linewidth}@{}}
+\toprule
+Namespace & Main declarations \\
+\midrule
+\texttt{HusimiInduction} &
+\texttt{exterior\_husimi\_convex\_order}\newline
+\texttt{exterior\_husimi\_equality\_iff} \\[3pt]
+\texttt{SlaterMeasure} &
+\texttt{orbit\_husimi\_convex\_order}\newline
+\texttt{orbit\_husimi\_equality\_iff} \\[3pt]
+\texttt{ExteriorEntropy} &
+\texttt{wehrl\_minimum}, \texttt{wehrl\_eq\_iff\_slater}\newline
+\texttt{renyiWehrl\_minimum}\newline
+\texttt{renyiWehrl\_eq\_iff\_slater} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The Gaussian-rank boundary}
+
+For the actual even Spin-vacuum-orbit Gaussian dictionary on eight modes,
+the formalized results give, for the original occupation vector $\Psi$
+defined in Section~\ref{sec:gaussian-rank},
+\[
+ 2\le\chi_G(\Psi)\le4.
+\]
+They include the actual Clifford representation, the four-term Gaussian
+decomposition, purity of Gaussian orbit vectors, the vacuum-chart
+annihilator calculation, and nonpurity of the target. Formal scale
+invariance gives the same interval for $\Psi/2$. Its occupation-space
+identification with $M^{\otimes2}$ is made in the paper; a separate
+Hilbert tensor-product identification is not part of the verified roots.
+Separately, the full
+normal-family certificate in Section~\ref{sec:gaussian-rank} is checked for
+arbitrary complex parameters, including zero parameters. The encoded
+target has the nonzero certificate value $18063360$.
+
+These results do not yet constitute an end-to-end formalization of
+$\chi_G(M^{\otimes2})=4$. The remaining Lean work is the original
+Fock-to-coordinate identification, covariance of the certificate under the
+actual common transformations, and the reduction of every three-term
+pure-spinor sum, including its degenerate cases. Section~\ref{sec:gaussian-rank}
+gives the mathematical argument for these steps. The half-spin and odd-spin
+convex-order theorems, their entropy consequences, and the applications in
+Section~\ref{app:section} likewise have paper proofs here, rather than
+completed end-to-end Lean proofs. The repository's
+\href{https://github.com/veridiscoverLab/fermionic-coherent-lean/blob/main/TODO.md}{\texttt{TODO.md}}
+records the outstanding formal statements and their paper-level derivations.
+
+\subsection{Verification procedure and foundations}
+
+The recorded runs use Lean~4.29.0 and mathlib at revision
+\texttt{8a178386ffc0f5fef0b77738bb5449d50efeea95}.
+All Lean and Lake execution took place on a CAB server through SSH.
+Three suites passed clean project compilation with warnings treated as
+errors, inspection of all selected declaration types and their transitive
+axioms, and a fresh kernel replay of the imported proof environment.
+The exterior suite contains 20 modules and 309 theorems; the rank
+foundation and certificate suite contains 33 modules and 257 theorems;
+the vacuum-chart suite contains 12 modules and 150 theorems. These suites
+overlap and were verified in three separate runs. Their shared source
+files are identical.
+
+The proofs use no \texttt{sorry}, \texttt{admit}, added mathematical axiom,
+or \texttt{native\_decide}. Finite certificate leaves use ordinary
+kernel-checked decision procedures, and parameter identities use
+kernel-checked algebraic proofs. The disclosed logical axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+Fresh replay starts from an empty environment and rechecks the replayable
+safe, non-partial constants with the same Lean kernel; axioms remain axioms.
+It is not an independent implementation of the kernel. The dependency
+versions are pinned, but their source files were not all recompiled from
+scratch in each run. Source hashes, complete logs, and reproduction
+instructions are included in the repository.

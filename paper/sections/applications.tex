@@ -1,0 +1,183 @@
+\section{Entropy deficits and coherent measurement capacity}
+\label{app:section}
+
+The distribution comparison also gives quantitative information about
+the input state and the measurement it defines.  The first application
+relates the Wehrl entropy deficit to fractional occupation numbers.
+The second determines the mutual-information capacity of the coherent
+measurement, including repeated measurements on entangled inputs.
+
+\subsection{An occupation-number bound for the entropy deficit}
+
+\begin{proposition}
+\label{app:deficit}
+Let $2\le p\le n$, let $\psi\in\Lambda^p\C^n$ be a unit vector,
+write $\rho=|\psi\rangle\langle\psi|$, and put $D=\binom np$.
+With the one-particle matrix $\gamma_\rho$ from
+\eqref{ext:one-body}, and the coherent moments and entropy constants
+of Section~\ref{ent:section},
+\begin{equation}
+ S_W(\rho)-s_{p,n}
+ \ge
+ \frac{D\,m_{p-1,n-1}(2)}{2n(n+1)}
+ \Tr\bigl[\gamma_\rho(\Id-\gamma_\rho)\bigr].
+ \label{app:entropy-deficit}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The original occupation conditioning \eqref{ext:conditioning},
+followed by the lower-sector comparison with the test $t^2$, gives
+\begin{equation}
+ \int Q_\rho^2\,d\nu_{p,n}
+ \le m_{p-1,n-1}(2)\,
+       \E_u\langle u,\gamma_\rho u\rangle^2,
+ \label{app:quadratic-conditioning}
+\end{equation}
+where $u$ is uniform on the complex unit sphere.  Zero conditional
+branches contribute zero, so this formula also covers singular
+$\rho$ and vanishing occupation probabilities.
+
+For every Hermitian matrix $A$, diagonalization and unitary invariance
+give
+\begin{equation}
+ \E_u\langle u,Au\rangle^2
+ =\frac{(\Tr A)^2+\Tr(A^2)}{n(n+1)}.
+ \label{app:sphere-second-moment}
+\end{equation}
+Indeed, normalize a vector of independent standard complex Gaussian
+coordinates.  The squared moduli of its normalized coordinates are
+uniform on the probability simplex.  Integrating its monomials gives
+$\E|u_i|^4=2/[n(n+1)]$ and
+$\E|u_i|^2|u_j|^2=1/[n(n+1)]$ for $i\ne j$.
+Expanding the square in an eigenbasis proves
+\eqref{app:sphere-second-moment}; the formula also holds for $n=1$.
+
+A coherent Slater input has one-particle matrix $\pi_W$, with
+$\Tr\pi_W=\Tr(\pi_W^2)=p$.  Its conditional states are Slater,
+so \eqref{app:quadratic-conditioning} is an equality for that input.
+Since $\Tr\gamma_\rho=p$, subtraction yields
+\begin{equation}
+ m_{p,n}(2)-\int Q_\rho^2\,d\nu_{p,n}
+ \ge\frac{m_{p-1,n-1}(2)}{n(n+1)}
+          \Tr\bigl[\gamma_\rho(\Id-\gamma_\rho)\bigr].
+ \label{app:moment-deficit}
+\end{equation}
+Finally, $t\log t-\tfrac12t^2$, extended continuously at zero,
+is convex on $[0,1]$, since its second derivative on $(0,1]$ is
+$t^{-1}-1\ge0$.  Theorem~\ref{ext:convex-order} applied to this
+function gives
+\[
+ S_W(\rho)-s_{p,n}
+ \ge\frac D2\left(m_{p,n}(2)-\int Q_\rho^2\,d\nu_{p,n}\right).
+\]
+Combining this with \eqref{app:moment-deficit} proves the result.
+\end{proof}
+
+The right-hand side sums $\lambda_j(1-\lambda_j)$ over the natural
+occupation numbers.  It vanishes exactly when the one-particle matrix
+is a projection, which by the equality argument of
+Theorem~\ref{ext:convex-order} forces a pure Slater state.
+The coefficient in \eqref{app:entropy-deficit} is not asserted to be
+optimal.  For $p=n$ the sector is one-dimensional and both sides
+are zero.
+
+\subsection{The information capacity of the coherent POVM}
+
+Fix one of the coherent orbits considered above.  Let $\mathcal H$
+be its representation space, $D=\dim\mathcal H$, $\nu$ its invariant
+probability, and $s_*$ its coherent Wehrl entropy from
+Theorem~\ref{ent:minima}.  The resolution of the identity defines
+the positive operator-valued measure
+\begin{equation}
+ E(dx)=D|\Omega_x\rangle\langle\Omega_x|\,d\nu(x).
+ \label{app:povm}
+\end{equation}
+An input density operator $\rho$ produces the density
+$f_\rho(x)=D Q_\rho(x)$ relative to $\nu$.
+The \emph{measurement capacity} is the supremum of $I(Z:X)$ over
+measurable input ensembles $z\mapsto\rho_z$ with a probability law for the
+classical label $Z$; the measurement itself remains fixed.
+
+\begin{proposition}[Capacity and repeated inputs]
+\label{app:capacity}
+For the POVM \eqref{app:povm},
+\begin{equation}
+ C_{\mathrm{meas}}=\log D-s_*.
+ \label{app:measurement-capacity}
+\end{equation}
+For every positive integer $\ell$, its $\ell$-fold product measurement
+has capacity $\ell(\log D-s_*)$, allowing arbitrary joint input
+ensembles of density operators on $\mathcal H^{\otimes\ell}$.
+In particular, this assertion includes entangled inputs.
+\end{proposition}
+\begin{proof}
+For a probability density $f$ with respect to the probability measure
+$\nu$, write $h_\nu(f)=-\int f\log f\,d\nu$.
+The normalization of Wehrl entropy gives
+\begin{equation}
+ h_\nu(f_\rho)=S_W(\rho)-\log D\ge s_*-\log D.
+ \label{app:output-entropy}
+\end{equation}
+Also $h_\nu(f)\le0$, by convexity of $t\log t$ and $\int f\,d\nu=1$.
+For an ensemble $(\rho_z,\pi(dz))$, put
+$\overline f=\int f_{\rho_z}\,\pi(dz)$.  Then
+\[
+ I(Z:X)
+ =h_\nu(\overline f)-\int h_\nu(f_{\rho_z})\,\pi(dz)
+ \le\log D-s_*.
+\]
+These entropy expressions are finite because all measurement output
+densities are bounded by $D$.  Equality is attained by the invariant
+ensemble of pure coherent projectors: its average input is $\Id/D$,
+its average output density is one, and each input has Wehrl entropy
+$s_*$.  A finite ensemble can attain the same value.  Indeed,
+$\Id/D$ belongs to the convex hull of the compact orbit of coherent
+projectors, and finite-dimensional convexity gives a finite convex
+combination with this average; every member still has the same
+minimum output entropy.
+
+For repeated measurements, fix any density operator $\rho$ on
+$\mathcal H^{\otimes\ell}$.  Its joint output density is
+\[
+ f_\rho(x_1,\ldots,x_\ell)
+ =D^\ell\Tr\!\left[\rho\bigotimes_{j=1}^\ell
+                |\Omega_{x_j}\rangle\langle\Omega_{x_j}|\right].
+\]
+For a history $(x_1,\ldots,x_{j-1})$ of positive marginal density,
+define
+\[
+ K=\bigotimes_{i<j}\sqrt D\,
+       |\Omega_{x_i}\rangle\langle\Omega_{x_i}|,
+ \qquad
+ \tau=
+ \frac{\Tr_{1,\ldots,j-1}[(K\otimes\Id)\rho(K^*\otimes\Id)]}
+      {\Tr[(K\otimes\Id)\rho(K^*\otimes\Id)]}.
+\]
+The operator $\tau$ is a density operator on the remaining factors.
+Its first reduced density operator, say $\tau_j$, produces the
+conditional density of $x_j$ by the same POVM:
+$f(x_j\mid x_1,\ldots,x_{j-1})=D Q_{\tau_j}(x_j)$.
+This follows by inserting the resolution of the identity in the
+unmeasured factors and taking the indicated partial trace.
+Histories with zero marginal density make no contribution.
+
+Each conditional density is bounded by $D$ and satisfies
+\eqref{app:output-entropy}.  The joint density is bounded by $D^\ell$.
+Thus $f\log f$ is integrable for each joint and conditional law;
+in particular, its negative part is bounded in integral by $1/e$
+and its positive part by the corresponding logarithmic bound.
+The entropy chain rule is therefore valid and gives
+\begin{equation}
+ h_{\nu^{\otimes\ell}}(f_\rho)
+ =\sum_{j=1}^\ell
+   \E\,h_\nu\bigl(f(\,\cdot\mid X_1,\ldots,X_{j-1})\bigr)
+ \ge\ell(s_*-\log D).
+ \label{app:repeated-entropy}
+\end{equation}
+Product coherent inputs attain this bound.  For an arbitrary joint
+input ensemble, the entropy of its average output relative to
+$\nu^{\otimes\ell}$ is at most zero.  The mutual-information identity
+therefore gives the upper bound $\ell(\log D-s_*)$.
+Independent copies of an optimal coherent ensemble attain it,
+which proves the capacity formula even with joint encoding.
+\end{proof}
