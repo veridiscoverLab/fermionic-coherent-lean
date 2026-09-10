@@ -1,0 +1,1973 @@
+{
+  "host": "CAB-Lab-Server-8",
+  "ssh_alias": "cab17",
+  "run_directory": "/home/dzheng/remote_builds/fermionic_coherent_formal_20260909/geometry_verification_runs/20260910T012634Z",
+  "utc_started": "20260910T012634Z",
+  "utc_completed": "20260910T013630Z",
+  "lean": "Lean (version 4.29.0, x86_64-unknown-linux-gnu, commit 98dc76e3c0a9b856c9b98726b713fb04fab16740, Release)",
+  "mathlib_revision": "8a178386ffc0f5fef0b77738bb5449d50efeea95",
+  "source_sha256": {
+    "lean-toolchain": "651c8accb402b0c071cd336e9d3dc0a55516b1bfb434ddc4801f14936785b1d2",
+    "lakefile.toml": "afc1c30faf8e75f5257a983ea01c3a374ef9405861ca125dd575a961c95d379e",
+    "lake-manifest.json": "e494d8c50a3f34b0fce543dc7b26e0348995de70ce6c2b019ee09cc03624b886",
+    "FermionicRankGeometry.lean": "a8505c1c29d38dbd3151cb844e1ce3f7b9ce179dccd08143bf7a71b47def45a0",
+    "Fermionic/Fock.lean": "131d6f33cee63cba6e3ccdcd0f91a7a7496b9e57d680c8eb6bb8a787dbf708b4",
+    "Fermionic/Spinor.lean": "4848ae577edf52b3bcad8009785b3d27f307f9a09a809b5054bee2ace9f5e62c",
+    "Fermionic/FockVacuumKernel.lean": "3d89ec883f2fdcf2f73f47d3863d4fcceb2be8ed8080f4ac24d4a70f32b3eac6",
+    "Fermionic/SpinorTransport.lean": "0f864dc3f7e9d7285d76bf7a1c7276e13c76fd7fdbf45934d78ab5e8ef3f9237",
+    "Fermionic/PureDecomposition.lean": "23abc9a881361e7f021673bb2e4ef2f74071c6690431a1d8480bcc9f23fc9b72",
+    "Fermionic/PhysicalGaussian.lean": "a89837dd757ab6e30e9d7e89a2265453fbb890ad4f0f006fb1353e0ebfb0d358",
+    "Fermionic/PhysicalOccupancy.lean": "0f808548b1671e1d46b2b4a4b92ec6c9b5e7b15faf140aee379c2f5acda13830",
+    "Fermionic/PhysicalGaussianRank.lean": "09d1d2c45a20a0b11da36e9507c76d93e5f0c75d32048ef1e442353cd0350a4b",
+    "Fermionic/GaussianScaling.lean": "9676f52bf9fb8d1e92c65d54f31aa62c936c5afc6b33a4d243aa7651ad153680",
+    "Fermionic/FockParity.lean": "9fc83b7780f641a1ea02a397355ecfa7cda0099151c6d0d3881401572b95569e",
+    "Fermionic/PureVacuumChart.lean": "9ca57f117a2e14d6af6d42dbea87a12f7fab23a20c48a6d0244bc1e92082d911",
+    "Fermionic/PureVacuumRigidity.lean": "00c3f9e22822ba2218bbcf862214965638a7ea2c3111b3ccc540493d66e9ac21"
+  },
+  "dependency_revisions": {
+    "mathlib": "8a178386ffc0f5fef0b77738bb5449d50efeea95",
+    "plausible": "83e90935a17ca19ebe4b7893c7f7066e266f50d3",
+    "LeanSearchClient": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "importGraph": "48d5698bc464786347c1b0d859b18f938420f060",
+    "proofwidgets": "3c52dee17f0cd89c1ec14de78920d1bdaa3d26b3",
+    "aesop": "7152850e7b216a0d409701617721b6e469d34bf6",
+    "Qq": "707efb56d0696634e9e965523a1bbe9ac6ce141d",
+    "batteries": "756e3321fd3b02a85ffda19fef789916223e578c",
+    "Cli": "7802da01beb530bf051ab657443f9cd9bc3e1a29"
+  },
+  "verifier_sha256": "59719744ba7096ddf6ed483a937fd60d01e4d89b058d3ca362d0645e3f9be213",
+  "declarations": [
+    {
+      "name": "Fermionic.Fock.Space",
+      "kind": "abbrev",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.create",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.annihilate",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.create_apply",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.annihilate_apply",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.create_square",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.annihilate_square",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.mixed_car",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_apply",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_square",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_square_end",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_car",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.representation",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.representation_generator",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.vacancy",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation_vacancy",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation_idempotent",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.vacancy_idempotent",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.vacancy_occupation_zero",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation_vacancy_zero",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.Split",
+      "kind": "abbrev",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.mem_annihilator",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.split_nondegenerate",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.split_finrank",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator_pairing_zero",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator_isotropic",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator_finrank_le",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.IsPure",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.pure_self_orthogonal",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.intersection_annihilates",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.null_self_annihilates",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.hyperplane_dimension",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.null_action_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.create_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilate_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.occupation_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.vacancy_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.historyOperator",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.null_history_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.mem_vacuum_annihilator",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.vacuumAnnihilatorEquiv",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.vacuum_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator",
+      "kind": "def",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_apply",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_one",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.create_swap",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_create",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_wedge",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_basis",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_coord",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.numberOperator_zero_of_annihilated",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.nonempty_coordinate_zero",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.vacuum_kernel_with_basis",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.joint_annihilation_kernel",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.FockVacuumKernel.joint_annihilation_iff_vacuum",
+      "kind": "theorem",
+      "source": "Fermionic/FockVacuumKernel.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.reflection_pairing",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.reflection",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.reflection_apply",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.reflection_involutive",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.action_injective",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.action_reflection",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.reflection_mem_annihilator_iff",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.annihilatorEquiv",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.nonnull_action_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.nonnull_action_isPure_iff",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.action_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.history_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.invertible_history_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.invertible_history_vacuum_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.unitAction",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.unitAction_one",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.unitAction_mul",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.unitAction_inv_apply",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.lipschitz_action_isPure_iff",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.spin_action_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.spin_vacuum_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.annihilator_smul",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.smul_isPure_iff",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.realInnerProduct",
+      "kind": "instance",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaQuadratic",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaQuadratic_apply",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaQuadratic_pos",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaEmbedding",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaEmbedding_quadratic",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaCliffordMap",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majoranaCliffordMap_generator",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majorana_units_mem_lipschitz",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.euclideanSpinAction",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.euclideanSpinRepresentation",
+      "kind": "def",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.majorana_fock_generator",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.euclideanSpinAction_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.euclideanSpin_vacuum_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.SpinorTransport.euclideanSpin_vacuum_ray_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/SpinorTransport.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.wedge_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.occupancy_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.annihilator_smul",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.smul_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.HasPureDecomposition",
+      "kind": "def",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.decomposition_zero_iff",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.decomposition_one_iff",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.ModeSpace",
+      "kind": "abbrev",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.TargetSpace",
+      "kind": "abbrev",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.occupancyBasis",
+      "kind": "def",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.targetSupports",
+      "kind": "def",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.target",
+      "kind": "def",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.target_four_pure",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.target_vacuum_coefficient",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.target_ne_zero",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.targetPureRank",
+      "kind": "def",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.targetPureRank_spec",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.targetPureRank_le_four",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PureDecomposition.targetPureRank_pos",
+      "kind": "theorem",
+      "source": "Fermionic/PureDecomposition.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussian.IsGaussian",
+      "kind": "def",
+      "source": "Fermionic/PhysicalGaussian.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussian.HasDecomposition",
+      "kind": "def",
+      "source": "Fermionic/PhysicalGaussian.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussian.gaussian_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussian.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussian.decomposition_implies_pure",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussian.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussian.vacuum_isGaussian",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussian.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussian.gaussian_smul",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussian.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majorana_square_one",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majoranaUnit",
+      "kind": "def",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majoranaUnit_mem_lipschitz",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majorana_pair_mem_spin",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majoranaPair",
+      "kind": "def",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majoranaPair_action",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.annihilate_wedge_eq_zero",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.majorana_action_wedge",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.even_orthonormal_wedge_orbit",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.even_orthonormal_wedge_isGaussian",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.occupancy_isGaussian",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.target_support_isGaussian",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalOccupancy.target_has_gaussian_decomposition",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalOccupancy.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.target_decomposable",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank",
+      "kind": "def",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank_spec",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank_le_of_decomposition",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank_min",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank_le_four",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.decomposition_zero_iff",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank_pos",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.one_le_targetGaussianRank",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetPureRank_le_targetGaussianRank",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.PhysicalGaussianRank.targetGaussianRank_bounds",
+      "kind": "theorem",
+      "source": "Fermionic/PhysicalGaussianRank.lean"
+    },
+    {
+      "name": "Fermionic.GaussianScaling.decomposition_smul",
+      "kind": "theorem",
+      "source": "Fermionic/GaussianScaling.lean"
+    },
+    {
+      "name": "Fermionic.GaussianScaling.decomposition_smul_iff",
+      "kind": "theorem",
+      "source": "Fermionic/GaussianScaling.lean"
+    },
+    {
+      "name": "Fermionic.GaussianScaling.normalizedTarget",
+      "kind": "def",
+      "source": "Fermionic/GaussianScaling.lean"
+    },
+    {
+      "name": "Fermionic.GaussianScaling.normalizedTarget_decomposition_iff",
+      "kind": "theorem",
+      "source": "Fermionic/GaussianScaling.lean"
+    },
+    {
+      "name": "Fermionic.GaussianScaling.target_eq_two_smul_normalizedTarget",
+      "kind": "theorem",
+      "source": "Fermionic/GaussianScaling.lean"
+    },
+    {
+      "name": "Fermionic.GaussianScaling.normalizedTarget_minimum",
+      "kind": "theorem",
+      "source": "Fermionic/GaussianScaling.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.create_even_to_odd",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.create_odd_to_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.annihilate_even_to_odd",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.annihilate_odd_to_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.action_even_to_odd",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.action_odd_to_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.realInnerProduct",
+      "kind": "instance",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.real_even_preserves_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.euclideanSpinAction_preserves_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.euclideanSpin_vacuum_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.euclideanSpin_vacuum_smul_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.FockParity.gaussian_even",
+      "kind": "theorem",
+      "source": "Fermionic/FockParity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.vacuumCoefficient",
+      "kind": "def",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.vacuumCoefficient_create",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.vacuumCoefficient_annihilate_create",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.creator_eq_zero_of_vacuum_ne_zero",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.annihilatorProjection",
+      "kind": "def",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.annihilatorProjection_injective",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.annihilatorProjection_surjective",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.annihilatorProjectionEquiv",
+      "kind": "def",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.graphDirection",
+      "kind": "def",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.graphDirection_mem_annihilator",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.graphDirection_annihilates",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.graphDirection_skew",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumChart.graphDirection_two_contractions",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumChart.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.graphDirection_eq_zero",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.pure_zero_two_contractions_is_vacuum",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.vacuumCoefficient_wedge_zero",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.vacuumCoefficient_one_contraction_wedge",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.vacuumCoefficient_two_contractions_wedge",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.vacuumCoefficient_two_contractions_basis",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.vacuumCoefficient_basis",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.target_vacuumCoefficient",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.target_two_contractions_zero",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.target_first_block_coefficient",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.target_ne_vacuum",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.target_not_pure",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.targetGaussianRank_ne_one",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    },
+    {
+      "name": "Fermionic.PureVacuumRigidity.two_le_targetGaussianRank",
+      "kind": "theorem",
+      "source": "Fermionic/PureVacuumRigidity.lean"
+    }
+  ],
+  "theorem_count": 150,
+  "module_count": 12,
+  "axioms": {
+    "Fermionic.Fock.Space": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.create": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.annihilate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.create_apply": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.annihilate_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.create_square": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.annihilate_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.mixed_car": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_square_end": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_car": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.representation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.representation_generator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.vacancy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation_vacancy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.vacancy_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.vacancy_occupation_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation_vacancy_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.Split": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.mem_annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.split_nondegenerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.split_finrank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator_pairing_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator_isotropic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator_finrank_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.IsPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.pure_self_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.intersection_annihilates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.null_self_annihilates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.hyperplane_dimension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.null_action_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.create_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilate_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.occupation_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.vacancy_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.historyOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.null_history_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.mem_vacuum_annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.vacuumAnnihilatorEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.vacuum_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.create_swap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_create": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_wedge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_coord": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.numberOperator_zero_of_annihilated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.nonempty_coordinate_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.vacuum_kernel_with_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.joint_annihilation_kernel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockVacuumKernel.joint_annihilation_iff_vacuum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.reflection_pairing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.reflection_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.reflection_involutive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.action_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.action_reflection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.reflection_mem_annihilator_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.annihilatorEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.nonnull_action_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.nonnull_action_isPure_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.action_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.history_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.invertible_history_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.invertible_history_vacuum_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.unitAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.unitAction_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.unitAction_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.unitAction_inv_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.lipschitz_action_isPure_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.spin_action_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.spin_vacuum_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.annihilator_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.smul_isPure_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.realInnerProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaQuadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaQuadratic_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaQuadratic_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaEmbedding": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaEmbedding_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaCliffordMap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majoranaCliffordMap_generator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majorana_units_mem_lipschitz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.euclideanSpinAction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.euclideanSpinRepresentation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.majorana_fock_generator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.euclideanSpinAction_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.euclideanSpin_vacuum_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SpinorTransport.euclideanSpin_vacuum_ray_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.wedge_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.occupancy_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.annihilator_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.smul_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.HasPureDecomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.decomposition_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.decomposition_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.ModeSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.TargetSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.occupancyBasis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.targetSupports": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.target": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.target_four_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.target_vacuum_coefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.target_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.targetPureRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.targetPureRank_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.targetPureRank_le_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureDecomposition.targetPureRank_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussian.IsGaussian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussian.HasDecomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussian.gaussian_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussian.decomposition_implies_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussian.vacuum_isGaussian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussian.gaussian_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majorana_square_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majoranaUnit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majoranaUnit_mem_lipschitz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majorana_pair_mem_spin": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majoranaPair": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majoranaPair_action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.annihilate_wedge_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.majorana_action_wedge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.even_orthonormal_wedge_orbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.even_orthonormal_wedge_isGaussian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.occupancy_isGaussian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.target_support_isGaussian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalOccupancy.target_has_gaussian_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.target_decomposable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_le_of_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_min": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_le_four": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.decomposition_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.one_le_targetGaussianRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetPureRank_le_targetGaussianRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.GaussianScaling.decomposition_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.GaussianScaling.decomposition_smul_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.GaussianScaling.normalizedTarget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.GaussianScaling.normalizedTarget_decomposition_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.GaussianScaling.target_eq_two_smul_normalizedTarget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.GaussianScaling.normalizedTarget_minimum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.create_even_to_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.create_odd_to_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.annihilate_even_to_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.annihilate_odd_to_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.action_even_to_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.action_odd_to_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.realInnerProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.real_even_preserves_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.euclideanSpinAction_preserves_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.euclideanSpin_vacuum_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.euclideanSpin_vacuum_smul_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FockParity.gaussian_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.vacuumCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.vacuumCoefficient_create": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.vacuumCoefficient_annihilate_create": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.creator_eq_zero_of_vacuum_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.annihilatorProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.annihilatorProjection_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.annihilatorProjection_surjective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.annihilatorProjectionEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.graphDirection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.graphDirection_mem_annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.graphDirection_annihilates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.graphDirection_skew": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumChart.graphDirection_two_contractions": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.graphDirection_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.pure_zero_two_contractions_is_vacuum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.vacuumCoefficient_wedge_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.vacuumCoefficient_one_contraction_wedge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.vacuumCoefficient_two_contractions_wedge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.vacuumCoefficient_two_contractions_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.vacuumCoefficient_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.target_vacuumCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.target_two_contractions_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.target_first_block_coefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.target_ne_vacuum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.target_not_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.targetGaussianRank_ne_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.PureVacuumRigidity.two_le_targetGaussianRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_hygiene": "PASS",
+  "clean_compile": "PASS",
+  "fresh_kernel_replay_including_imports": "PASS",
+  "kernel_replay_scope": "Same Lean kernel, all replayable safe non-partial constants in the imported environment replayed from empty; axioms remain axioms.",
+  "full_paper_verified": false,
+  "physical_gaussian_rank_four_verified": false,
+  "all_three_pure_vanishing_verified": false,
+  "actual_fock_coordinate_gram_identification_verified": false,
+  "actual_normalization_covariance_verified": false,
+  "full_coordinate_normal_family_verified": false,
+  "physical_gaussian_input_and_upper_bound_verified": true,
+  "actual_annihilator_vacuum_chart_verified": true,
+  "actual_joint_annihilation_kernel_verified": true,
+  "nonzero_scalar_decomposition_equivalence_verified": true,
+  "coordinate_eight_bit_even_domain_verified": false,
+  "original_vacuum_chart_zero_degree_two_rigidity_verified": true,
+  "original_target_not_pure_verified": true,
+  "original_target_rank_at_least_two_verified": true,
+  "core_roots": [
+    "Fermionic.PhysicalGaussian.gaussian_isPure",
+    "Fermionic.PhysicalGaussian.decomposition_implies_pure",
+    "Fermionic.PhysicalOccupancy.target_has_gaussian_decomposition",
+    "Fermionic.PhysicalGaussianRank.targetGaussianRank_bounds",
+    "Fermionic.PhysicalGaussianRank.targetPureRank_le_targetGaussianRank",
+    "Fermionic.GaussianScaling.normalizedTarget_minimum",
+    "Fermionic.FockParity.gaussian_even",
+    "Fermionic.FockVacuumKernel.joint_annihilation_iff_vacuum",
+    "Fermionic.PureVacuumChart.graphDirection_two_contractions",
+    "Fermionic.PureVacuumRigidity.pure_zero_two_contractions_is_vacuum",
+    "Fermionic.PureVacuumRigidity.target_not_pure",
+    "Fermionic.PureVacuumRigidity.two_le_targetGaussianRank"
+  ],
+  "scope": "Actual full exterior-algebra geometry only: positive Euclidean Spin-vacuum Gaussian cone is pure and even; unchanged original target admits four physical Gaussian summands; nonzero scalar transport preserves every decomposition length. The whole joint annihilation kernel is the vacuum line. The original nonzero vacuum pure-spinor chart is reconstructed as its full annihilator graph; zero degree-two contraction data force the vacuum. The unchanged target is not pure, so its physical Gaussian rank is at least two and at most four. No coordinate certificate, general exponential reconstruction, all-pure-triple normal form, actual Gram coordinate bridge, or rank-four lower bound is certified."
+}

@@ -1,0 +1,6 @@
+'Fermionic.RankCertificate.toggle_lt_byte' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.bivectorOutput_even_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.normalPartner_even_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.normal_source_partner_byte_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.target_source_bivector_byte_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.target_source_partner_byte_even' depends on axioms: [propext, Classical.choice, Quot.sound]

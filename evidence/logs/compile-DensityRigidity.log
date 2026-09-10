@@ -1,0 +1,14 @@
+@Fermionic.DensityRigidity.column_eq_zero_of_diag_eq_zero : ∀ {ι : Type u_1} [Fintype ι] [DecidableEq ι]
+  {A : Matrix ι ι ℂ}, A.PosSemidef → ∀ {i : ι}, A i i = 0 → ∀ (j : ι), A j i = 0
+@Fermionic.DensityRigidity.row_eq_zero_of_diag_eq_zero : ∀ {ι : Type u_1} [Fintype ι] [DecidableEq ι]
+  {A : Matrix ι ι ℂ}, A.PosSemidef → ∀ {i : ι}, A i i = 0 → ∀ (j : ι), A i j = 0
+@Fermionic.DensityRigidity.eq_basisProjector_of_trace_eq_one : ∀ {ι : Type u_1} [inst : Fintype ι]
+  [inst_1 : DecidableEq ι] {A : Matrix ι ι ℂ},
+  A.PosSemidef →
+    A.trace = 1 → ∀ (i : ι), (∀ (j : ι), j ≠ i → A j j = 0) → A = Fermionic.DensityRigidity.basisProjector i
+@Fermionic.DensityRigidity.eq_zero_of_trace_eq_zero : ∀ {ι : Type u_1} [inst : Fintype ι] {A : Matrix ι ι ℂ},
+  A.PosSemidef → A.trace = 0 → A = 0
+'Fermionic.DensityRigidity.column_eq_zero_of_diag_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.DensityRigidity.row_eq_zero_of_diag_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.DensityRigidity.eq_basisProjector_of_trace_eq_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.DensityRigidity.eq_zero_of_trace_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

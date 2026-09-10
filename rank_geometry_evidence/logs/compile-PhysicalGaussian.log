@@ -1,0 +1,2 @@
+'Fermionic.PhysicalGaussian.gaussian_isPure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.PhysicalGaussian.decomposition_implies_pure' depends on axioms: [propext, Classical.choice, Quot.sound]

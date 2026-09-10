@@ -1,0 +1,20 @@
+# Remote build output and dependency caches
+.lake/
+.elan/
+*.olean
+*.ilean
+*.trace
+verification_runs/
+rank_verification_runs/
+geometry_verification_runs/
+LATEST_RUN.txt
+LATEST_RANK_RUN.txt
+LATEST_RANK_GEOMETRY_RUN.txt
+
+# Local tools and generated packaging
+__pycache__/
+*.pyc
+.DS_Store
+deliverables/
+
+# Recorded evidence/logs are intentionally tracked.

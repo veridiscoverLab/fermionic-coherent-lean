@@ -1,0 +1,6 @@
+'Fermionic.RankGramTransport.gram_relative_covariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankGramTransport.trace_pow_relative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankGramTransport.invariant16_relative_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankGramTransport.complete_gram_certificate_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

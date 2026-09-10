@@ -1,0 +1,3 @@
+'Fermionic.PureDecomposition.occupancy_isPure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.PureDecomposition.target_four_pure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.PureDecomposition.targetPureRank_pos' depends on axioms: [propext, Classical.choice, Quot.sound]

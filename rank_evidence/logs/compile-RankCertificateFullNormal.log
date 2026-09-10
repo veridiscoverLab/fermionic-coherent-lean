@@ -1,0 +1,7 @@
+'Fermionic.RankCertificate.actualNormalFullGram_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.actualNormalHalfPair_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.full_coordinate_normal_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Fermionic.RankCertificate.actual_normal_full_trace_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.actual_normal_full_trace_six' depends on axioms: [propext, Classical.choice, Quot.sound]

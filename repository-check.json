@@ -1,0 +1,77 @@
+{
+  "check": "repository assembly and integrity checker",
+  "host": "CAB-Lab-Server-8",
+  "utc_completed": "20260910T025425Z",
+  "snapshot_integrity": {
+    "snapshot_integrity": "PASS",
+    "fresh_replay_performed_by_this_check": false,
+    "recorded_suites": [
+      {
+        "suite": "evidence",
+        "recorded_run": "20260909T234218Z",
+        "modules": 20,
+        "declarations": 399,
+        "theorems": 309
+      },
+      {
+        "suite": "rank_evidence",
+        "recorded_run": "20260910T013918Z",
+        "modules": 33,
+        "declarations": 384,
+        "theorems": 257
+      },
+      {
+        "suite": "rank_geometry_evidence",
+        "recorded_run": "20260910T012634Z",
+        "modules": 12,
+        "declarations": 190,
+        "theorems": 150
+      }
+    ],
+    "union_modules": 52,
+    "union_declarations": 752,
+    "union_theorems": 547,
+    "full_paper_verified": false,
+    "physical_gaussian_rank_four_verified": false
+  },
+  "checker_sha256": "3cf92c2feed3ddc85d694f5382d7975efaccfb98f332c9b5a1ea97b7c42f15e5",
+  "negative_tests": [
+    {
+      "case": "changed Lean source",
+      "result": "PASS",
+      "diagnostic": "Snapshot integrity FAILED: Source mismatch: Fermionic/Fock.lean"
+    },
+    {
+      "case": "changed verification runner",
+      "result": "PASS",
+      "diagnostic": "Snapshot integrity FAILED: Runner mismatch: verify_remote.py"
+    },
+    {
+      "case": "unverified additional Lean module",
+      "result": "PASS",
+      "diagnostic": "Snapshot integrity FAILED: Project contains missing or unverified Lean source"
+    },
+    {
+      "case": "missing recorded replay log",
+      "result": "PASS",
+      "diagnostic": "Snapshot integrity FAILED: Missing regular file: rank_evidence/logs/kernel-fresh-replay.log"
+    },
+    {
+      "case": "false rank-four scope even with an updated evidence checksum",
+      "result": "PASS",
+      "diagnostic": "Snapshot integrity FAILED: Incorrect rank-four scope: rank_evidence"
+    }
+  ],
+  "local_markdown_links_checked": 56,
+  "english_documentation": "PASS",
+  "fresh_replay_performed": false,
+  "scope": "Source/evidence consistency and documentation checks only; no Lean/Lake execution in this repository assembly check.",
+  "documentation_sha256": {
+    "README.md": "98e2103ac8672ad2bfd8edb2829ae1bd27d220aa073a3dd7e2bc5837d5d85eb4",
+    "TODO.md": "9102fa8330c2525ab0d92016b09733da3cc0ba69b0f1ffb85753b1a1041b0ce0",
+    "AGENTS.md": "dd70d0e25a96d18fe5149c802be3ff01fbea3f7beb4a13371981a79b58b93a1d",
+    "docs/gaussian-rank-proof.md": "47b42613b47bc49ecca028937c2981ea84033c4f78131b7bf1957e6aecd874ec",
+    "docs/theorems.md": "4d31cf3f5945a11434c26f69845069b316e8b108b41e6a107e42ecf68618363b",
+    "docs/verification.md": "c06b306e805c9438571cd976a2ad313a2307dad67d2909914bcea1033238e239"
+  }
+}

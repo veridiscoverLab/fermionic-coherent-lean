@@ -1,0 +1,2 @@
+'Fermionic.RankCertificate.normalBasisPair_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.all_normal_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]

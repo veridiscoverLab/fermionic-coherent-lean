@@ -1,0 +1,4056 @@
+{
+  "host": "CAB-Lab-Server-8",
+  "ssh_alias": "cab17",
+  "run_directory": "/home/dzheng/remote_builds/fermionic_coherent_formal_20260909/verification_runs/20260909T234218Z",
+  "utc_started": "20260909T234218Z",
+  "utc_completed": "20260909T235717Z",
+  "lean": "Lean (version 4.29.0, x86_64-unknown-linux-gnu, commit 98dc76e3c0a9b856c9b98726b713fb04fab16740, Release)",
+  "mathlib_revision": "8a178386ffc0f5fef0b77738bb5449d50efeea95",
+  "source_sha256": {
+    "lean-toolchain": "651c8accb402b0c071cd336e9d3dc0a55516b1bfb434ddc4801f14936785b1d2",
+    "lakefile.toml": "afc1c30faf8e75f5257a983ea01c3a374ef9405861ca125dd575a961c95d379e",
+    "lake-manifest.json": "e494d8c50a3f34b0fce543dc7b26e0348995de70ce6c2b019ee09cc03624b886",
+    "Fermionic.lean": "bb3bc31b40b878a8246cbb6e6a8168fdf7a217b84caa390dd5964f2deb72cada",
+    "Fermionic/Fock.lean": "131d6f33cee63cba6e3ccdcd0f91a7a7496b9e57d680c8eb6bb8a787dbf708b4",
+    "Fermionic/Spinor.lean": "4848ae577edf52b3bcad8009785b3d27f307f9a09a809b5054bee2ace9f5e62c",
+    "Fermionic/CommonJensen.lean": "e207eb940a841840530dda3163200f81b54cd9a123c384a2ff0a7a8306c35a48",
+    "Fermionic/DensityRigidity.lean": "e453d97df31b989da20129f52d82946a8b195d0f37a4eb936abf715c045cd2d0",
+    "Fermionic/FourMode.lean": "fc9587758b51aa939a93323dd374021ebac9d32bd172b3ed20810f454beba4dc",
+    "Fermionic/ExteriorUnitary.lean": "ac13ed3e8abbd237b466ad9f9bb6e2fe0efe743d9367b7948d18882c5fc5bc81",
+    "Fermionic/HaarConditioning.lean": "4f1873e87ce8e6191722dc1deecfacc7145b4a215f99f2bb4d113dff1db3f625",
+    "Fermionic/ExteriorDifferential.lean": "9c24fe4976b6691d2527e99a010a176dd34db1128f7c16f12acf3e180ac680b2",
+    "Fermionic/OccupationMixture.lean": "2063ea39ad82b9cefcab0feed148725b9044333e226dd80e16f278059b77d9dc",
+    "Fermionic/ConditionalSector.lean": "c24ade3565a0686c2d6d5ac7c81c3a7e990a42ab252d121076636debb71f8b99",
+    "Fermionic/OccupancyOrbit.lean": "69b1a84ce91c0a4d1374ad2bada82162316228076d5b6320b71e4c6cfb0861b2",
+    "Fermionic/OccupationConvexOrder.lean": "fbfda8136e761df369510c58ef12dea802ba2e702f9af087e665ae8ae4102009",
+    "Fermionic/SlaterOrbit.lean": "9c9a0b76647c37a89ca62f7060caa15efd9187fb564f9a110007223f61d17da0",
+    "Fermionic/SlaterOneParticle.lean": "fbf5120ce35879b87909c9746c2ab8e7345dcca0a5ee1838cd290957cffafc06",
+    "Fermionic/SlaterClosure.lean": "f525632330b3f51b645437f290364b9ccba6beba5a0dc134700490028257d030",
+    "Fermionic/ExteriorHusimi.lean": "99b09fa585af4127019f594a74e379917607cecd5a3a27a09bae18301cc91d91",
+    "Fermionic/HusimiScale.lean": "47c38e5100d9205ee8e1ac215eaff659ab8d1db51bdc087cce7b38d009edc829",
+    "Fermionic/HusimiInduction.lean": "67976d113c9291a370bb826b0576717c131e1f475e44b1f5a85310668f2e0bc5",
+    "Fermionic/SlaterMeasure.lean": "3fb4183cee383507584eabf876df91e135cb7bd3a1a5d860306484de73abf0f6",
+    "Fermionic/ExteriorEntropy.lean": "e611854adc95df6183f68996d29f53349b3760be51833f4f26caf45f02c1afa6"
+  },
+  "dependency_revisions": {
+    "mathlib": "8a178386ffc0f5fef0b77738bb5449d50efeea95",
+    "plausible": "83e90935a17ca19ebe4b7893c7f7066e266f50d3",
+    "LeanSearchClient": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "importGraph": "48d5698bc464786347c1b0d859b18f938420f060",
+    "proofwidgets": "3c52dee17f0cd89c1ec14de78920d1bdaa3d26b3",
+    "aesop": "7152850e7b216a0d409701617721b6e469d34bf6",
+    "Qq": "707efb56d0696634e9e965523a1bbe9ac6ce141d",
+    "batteries": "756e3321fd3b02a85ffda19fef789916223e578c",
+    "Cli": "7802da01beb530bf051ab657443f9cd9bc3e1a29"
+  },
+  "verifier_sha256": "7ec1f9ea718610442cc07145bc1723bbd3ede1d1f346fea6d8b0a73bd24340dc",
+  "declarations": [
+    {
+      "name": "Fermionic.Fock.Space",
+      "kind": "abbrev",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.create",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.annihilate",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.create_apply",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.annihilate_apply",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.create_square",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.annihilate_square",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.mixed_car",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_apply",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_square",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_square_end",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.action_car",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.representation",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.representation_generator",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.vacancy",
+      "kind": "def",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation_vacancy",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation_idempotent",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.vacancy_idempotent",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.vacancy_occupation_zero",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Fock.occupation_vacancy_zero",
+      "kind": "theorem",
+      "source": "Fermionic/Fock.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.Split",
+      "kind": "abbrev",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.mem_annihilator",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.split_nondegenerate",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.split_finrank",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator_pairing_zero",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator_isotropic",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilator_finrank_le",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.IsPure",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.pure_self_orthogonal",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.intersection_annihilates",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.null_self_annihilates",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.hyperplane_dimension",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.null_action_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.create_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.annihilate_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.occupation_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.vacancy_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.historyOperator",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.null_history_preserves_pure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.mem_vacuum_annihilator",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.vacuumAnnihilatorEquiv",
+      "kind": "def",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.Spinor.vacuum_isPure",
+      "kind": "theorem",
+      "source": "Fermionic/Spinor.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.pointwise_jensen",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.integral_weighted_sum",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.integral_jensen",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.ae_eq_mixture_of_integral_eq",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.ae_eq_of_integral_eq",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.integral_eq_of_map_eq",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.common_law_jensen",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.common_law_eq_implies_ae_eq",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.integrable_map_of_continuousOn_unitInterval",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.integrable_comp_of_continuousOn_unitInterval",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.mixture_aemeasurable_and_range",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.common_law_jensen_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.common_law_eq_implies_ae_eq_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.mul_mem_unitInterval",
+      "kind": "lemma",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.scale_mixture_convex",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.scale_mixture_strictConvex",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.integrable_scaled_of_continuousOn",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.scale_mixture_continuousOn",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.scale_mixture_convex_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.CommonJensen.scale_mixture_strictConvex_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/CommonJensen.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.column_eq_zero_of_diag_eq_zero",
+      "kind": "theorem",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.row_eq_zero_of_diag_eq_zero",
+      "kind": "theorem",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.row_and_column_eq_zero_of_diag_eq_zero",
+      "kind": "theorem",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.basisProjector",
+      "kind": "def",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.basisProjector_apply",
+      "kind": "theorem",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.eq_basisProjector_of_trace_eq_one",
+      "kind": "theorem",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.DensityRigidity.eq_zero_of_trace_eq_zero",
+      "kind": "theorem",
+      "source": "Fermionic/DensityRigidity.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.Space",
+      "kind": "abbrev",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyB",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ_zero",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyB_self",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ_add",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ_smul",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.axis",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.axisCoefficient",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.axis_ne_zero",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ_axis",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ_sub_smul_axis",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exists_axisCoefficient_ne_zero",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.nonisotropic_decomposition",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.IsQuadric",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.HasDecomposition",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.hasDecomposition_zero_iff",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.hasDecomposition_one_iff",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.hasDecomposition_two",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.decomposition_exists",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_spec",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_le",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_zero_iff",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_eq_one",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_one_iff",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_eq_two",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_two_iff",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_nonzero",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.magic",
+      "kind": "def",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.chevalleyQ_magic",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.FourMode.exactRank_magic",
+      "kind": "theorem",
+      "source": "Fermionic/FourMode.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.Index",
+      "kind": "abbrev",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.AlgebraicSector",
+      "kind": "abbrev",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.Sector",
+      "kind": "abbrev",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.basis",
+      "kind": "def",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.coordinates",
+      "kind": "def",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.coordinates_basis",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix",
+      "kind": "def",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.coordinates_intertwine",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix_mul",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix_one",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.enumerate",
+      "kind": "def",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.diagonal_on_basis",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix_diagonal",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix_entry",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix_conjTranspose",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.exteriorMatrix_mem_unitary",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.representation",
+      "kind": "def",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.continuous_exteriorMatrix",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorUnitary.continuous_representation",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorUnitary.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.probabilityHaar",
+      "kind": "def",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.probabilityHaar_isHaar",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.probabilityHaar_isProbability",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.probabilityHaar_isRightInvariant",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.map_readout_mul_left",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.map_readout_mul_right",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.map_readout_positive_mass",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.readout_eq_of_ae_eq",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.integral_double_haar",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.integral_eq_double_haar",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.isCompact_unitaryGroup",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryGroup_compactSpace",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryGroup_measurableSpace",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryGroup_borelSpace",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryHaar",
+      "kind": "def",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryHaar_isProbability",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryHaar_isHaar",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryHaar_isRightInvariant",
+      "kind": "instance",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom",
+      "kind": "def",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom_lower_apply",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom_first_apply",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom_first_row",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom_first_column",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstHom_injective",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitary_integral_eq_double",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryReindex",
+      "kind": "def",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryReindex_apply",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryReindex_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitaryReindex_measurePreserving",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.firstFinEquiv",
+      "kind": "def",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.firstFinEquiv_zero",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.firstFinEquiv_succ",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.firstFinEquiv_symm_zero",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.firstFinEquiv_symm_succ",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstFinHom",
+      "kind": "def",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstFinHom_zero_zero",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstFinHom_zero_succ",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstFinHom_succ_zero",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstFinHom_succ_succ",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.fixFirstFinHom_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.HaarConditioning.unitary_fin_integral_eq_double",
+      "kind": "theorem",
+      "source": "Fermionic/HaarConditioning.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.differentiable_exteriorMatrix",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.infinitesimal",
+      "kind": "def",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.hasFDerivAt_identity",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.sandwich",
+      "kind": "def",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.sandwich_apply",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.infinitesimal_conjTranspose",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.infinitesimal_unitary_conjugation",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.infinitesimal_diagonal",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.occupation",
+      "kind": "def",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.infinitesimal_single_diag",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.oneParticle",
+      "kind": "def",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.oneParticle_isHermitian",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.trace_infinitesimal",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.oneParticle_diag",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorDifferential.oneParticle_unitary_conjugation",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorDifferential.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.eigenRotation",
+      "kind": "def",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.eigenDensity",
+      "kind": "def",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.eigenDensity_posSemidef",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.eigenDensity_trace",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.eigenDensity_oneParticle_diagonal",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.probability",
+      "kind": "def",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.probability_nonneg",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.probability_sum",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.probability_cast",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.occupancyProjection",
+      "kind": "def",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.common_diagonal_mixture",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.common_projection_mixture",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.oneParticleReadout",
+      "kind": "def",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.OccupationMixture.common_readout_mixture",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationMixture.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.insertFirst",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.mem_insertFirst_zero",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.mem_insertFirst_succ",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.insertFirst_injective",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.insertFirst_surjective_occupied",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.insertFirst_range",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.sum_insertFirst",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.enumerate_insertFirst",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.enumerate_insertFirst_zero",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.enumerate_insertFirst_succ",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.basisInclusion",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.basisInclusion_compress_apply",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.basisInclusion_compress",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.basisInclusion_isometry",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.basisInclusion_compress_posSemidef",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.basisInclusion_compress_trace_le_one",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.intertwine_of_unitary_compression",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.quadratic",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.quadratic_compression",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.quadratic_smul",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.weight",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.weight_nonneg",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.trace_eq_weight",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.compression_zero_of_weight_zero",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.normalized",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.normalized_posSemidef",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.normalized_trace_eq_one",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.weight_smul_normalized",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.quadratic_eq_weight_mul_normalized",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.creation",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.creation_isometry",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.creation_conjTranspose_mulVec",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.creation_trace_eq_oneParticle",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.exteriorMatrix_fixFirst_compress",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.creation_intertwine",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.rotated",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.rotated_posSemidef",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.rotated_trace",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditionalMatrix",
+      "kind": "def",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditionalMatrix_posSemidef",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditional_weight_mem_unitInterval",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditional_weight_eq_oneParticleReadout",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditional_readout",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditional_readout_zero",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.ConditionalSector.conditional_readout_normalized",
+      "kind": "theorem",
+      "source": "Fermionic/ConditionalSector.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.coordinateProjection",
+      "kind": "def",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.permutationUnitary",
+      "kind": "def",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.occupancyPermutation",
+      "kind": "def",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.occupancyPermutation_mem",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.permutation_conjugates_projection",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.occupancy_same_orbit",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.projectionReadout",
+      "kind": "def",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.projectionReadout_eq_sum",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.projectionReadout_mem_unitInterval",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.continuous_projectionReadout",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.projectionReadout_conjugate",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.occupancy_readout_same_law",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.projectionReadout_permutation",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupancyOrbit.projectionReadout_injective",
+      "kind": "theorem",
+      "source": "Fermionic/OccupancyOrbit.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.component",
+      "kind": "def",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.component_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.component_range",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.component_common_law",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.actual_readout_eq_common_mixture",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.actual_readout_range",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.actual_readout_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.occupation_convex_order",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.IsSlaterDensity",
+      "kind": "def",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.component_injective",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.eigenDensity_basis_implies_slater",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.OccupationConvexOrder.occupation_equality_implies_slater",
+      "kind": "theorem",
+      "source": "Fermionic/OccupationConvexOrder.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOrbit.orderedPermutation",
+      "kind": "def",
+      "source": "Fermionic/SlaterOrbit.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOrbit.orderedPermutation_enumerate",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOrbit.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOrbit.permutation_basis_vector",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOrbit.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOrbit.ordered_permutation_wedge",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOrbit.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOrbit.ordered_permutation_column",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOrbit.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOrbit.basis_projector_same_orbit",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOrbit.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOneParticle.signUnitary",
+      "kind": "def",
+      "source": "Fermionic/SlaterOneParticle.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOneParticle.diagonal_unitary_preserves_basis",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOneParticle.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOneParticle.sign_preserves_basis",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOneParticle.lean"
+    },
+    {
+      "name": "Fermionic.SlaterOneParticle.oneParticle_basisProjector",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterOneParticle.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.basisUnitary",
+      "kind": "def",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.basisUnitary_apply",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.exists_unitary_extension",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.exists_unitary_first_column",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.exists_unitary_row_alignment",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.exists_unitary_frame_extension",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.frameVector",
+      "kind": "def",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.frameVector_unitary_columns",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.unitary_columns_isometry",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.frameVector_mul",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.frameVector_is_unitary_column",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.creation_contract_frame",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.contraction_unitary_column",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.pureMatrix",
+      "kind": "def",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.pureMatrix_compression",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.pureMatrix_smul",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.pureMatrix_unitary_column",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.unitary_column_trace_one",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.normalized_pos_smul",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.normalized_compression_isSlater",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.rotated_isSlater",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterClosure.conditional_isSlater",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterClosure.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout",
+      "kind": "def",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_mem_unitInterval",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.continuous_test_readout",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.quadratic_basis",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_eq_quadratic",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.creation_basis",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.basisProjector_posSemidef",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.basisProjector_trace",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_basisProjector_one",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.coherent_readout_positive_mass",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.orderedPermutation_mul_basis",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_reference_translate",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_reference_same_law",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.integral_readout_reference",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_rotated",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_rotated_same_law",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.integral_readout_rotated",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_forward_rotated_same_law",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.integral_readout_forward_rotated",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_coherent_input_same_law",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.integral_readout_coherent_input",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_conditional",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_conditional_normalized",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_conditional_zero",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.integral_conditional",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_eq_one_of_subsingleton",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_zero_particles",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorHusimi.readout_filled_sector",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorHusimi.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.coherentLaw",
+      "kind": "def",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.coherentLaw_isProbability",
+      "kind": "instance",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.coherentLaw_mem_unitInterval",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.scaleAverage",
+      "kind": "def",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.scaleAverage_eq_integral",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.continuous_scaleAverage",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.convex_scaleAverage",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.strictConvex_scaleAverage",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.scaleAverage_zero",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.coherent_inner_conditioning",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiScale.coherent_integral_conditioning",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiScale.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.scaled_test_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.scaled_test_convex",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.readout_weight_normalized",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.conditional_inner_integrable",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.conditional_coherent_weight",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.zero_sector_isSlater",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.reference",
+      "kind": "def",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.index_card_le",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.conditional_inner_bound",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.conditional_integral_bound",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.occupation_integral_bound",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.exterior_husimi_convex_order",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.slater_integral_eq",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.exterior_husimi_equality_implies_slater",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.exterior_husimi_equality_iff",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.HusimiInduction.exterior_husimi_convex_order_any_slater",
+      "kind": "theorem",
+      "source": "Fermionic/HusimiInduction.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.sectorMatrixMeasurable",
+      "kind": "instance",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.sectorMatrixBorel",
+      "kind": "instance",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.projector",
+      "kind": "def",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.projector_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.conjugate",
+      "kind": "def",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.conjugate_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.projector_mul",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbitMeasure",
+      "kind": "def",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbitMeasure_isProbability",
+      "kind": "instance",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbitMeasure_invariant",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbitMeasure_reference_independent",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.traceReadout",
+      "kind": "def",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.traceReadout_continuous",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.basisProjector_eq_single",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.traceReadout_projector",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.slater_iff_mem_range",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbitMeasure_ae_slater",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbit_readout_range",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbit_integral_eq_haar",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbit_husimi_convex_order",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.SlaterMeasure.orbit_husimi_equality_iff",
+      "kind": "theorem",
+      "source": "Fermionic/SlaterMeasure.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.sectorDimension",
+      "kind": "def",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.sectorDimension_eq_choose",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.sectorDimension_pos",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.powerMoment",
+      "kind": "def",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.normalizedMoment",
+      "kind": "def",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.wehrl",
+      "kind": "def",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.sum_readout",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.normalizedMoment_one",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.powerMoment_integrable",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.rpow_strictConvex",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.neg_rpow_strictConvex",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.powerMoment_le_coherent",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.coherent_le_powerMoment",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.powerMoment_eq_iff_slater",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.normalizedMoment_le_coherent",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.coherent_le_normalizedMoment",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.normalizedMoment_eq_iff_slater",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.powerMoment_pos",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.normalizedMoment_pos",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.renyiWehrl",
+      "kind": "def",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.renyiWehrl_minimum",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.renyiWehrl_eq_iff_slater",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.mul_log_strictConvex",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.wehrl_minimum",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    },
+    {
+      "name": "Fermionic.ExteriorEntropy.wehrl_eq_iff_slater",
+      "kind": "theorem",
+      "source": "Fermionic/ExteriorEntropy.lean"
+    }
+  ],
+  "theorem_count": 309,
+  "axioms": {
+    "Fermionic.Fock.Space": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.create": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.annihilate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.create_apply": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.annihilate_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.create_square": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.annihilate_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.mixed_car": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_square_end": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.action_car": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.representation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.representation_generator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.vacancy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation_vacancy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.vacancy_idempotent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.vacancy_occupation_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Fock.occupation_vacancy_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.Split": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.mem_annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.split_nondegenerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.split_finrank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator_pairing_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator_isotropic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilator_finrank_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.IsPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.pure_self_orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.intersection_annihilates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.null_self_annihilates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.hyperplane_dimension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.null_action_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.create_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.annihilate_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.occupation_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.vacancy_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.historyOperator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.null_history_preserves_pure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.mem_vacuum_annihilator": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.vacuumAnnihilatorEquiv": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.Spinor.vacuum_isPure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.pointwise_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.integral_weighted_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.integral_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.ae_eq_mixture_of_integral_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.ae_eq_of_integral_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.integral_eq_of_map_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.common_law_jensen": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.common_law_eq_implies_ae_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.integrable_map_of_continuousOn_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.integrable_comp_of_continuousOn_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.mixture_aemeasurable_and_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.common_law_jensen_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.common_law_eq_implies_ae_eq_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.mul_mem_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.scale_mixture_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.scale_mixture_strictConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.integrable_scaled_of_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.scale_mixture_continuousOn": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.scale_mixture_convex_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.CommonJensen.scale_mixture_strictConvex_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.column_eq_zero_of_diag_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.row_eq_zero_of_diag_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.row_and_column_eq_zero_of_diag_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.basisProjector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.basisProjector_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.eq_basisProjector_of_trace_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.DensityRigidity.eq_zero_of_trace_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.Space": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyB": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyB_self": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ_add": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.axis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.axisCoefficient": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.axis_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ_axis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ_sub_smul_axis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exists_axisCoefficient_ne_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.nonisotropic_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.IsQuadric": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.HasDecomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.hasDecomposition_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.hasDecomposition_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.hasDecomposition_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.decomposition_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_spec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_one_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_eq_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_two_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_nonzero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.magic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.chevalleyQ_magic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.FourMode.exactRank_magic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.Index": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.AlgebraicSector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.Sector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.coordinates_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.coordinates_intertwine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.enumerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.diagonal_on_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix_entry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix_conjTranspose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.exteriorMatrix_mem_unitary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.representation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.continuous_exteriorMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorUnitary.continuous_representation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.probabilityHaar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.probabilityHaar_isHaar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.probabilityHaar_isProbability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.probabilityHaar_isRightInvariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.map_readout_mul_left": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.map_readout_mul_right": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.map_readout_positive_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.readout_eq_of_ae_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.integral_double_haar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.integral_eq_double_haar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.isCompact_unitaryGroup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryGroup_compactSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryGroup_measurableSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryGroup_borelSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryHaar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryHaar_isProbability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryHaar_isHaar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryHaar_isRightInvariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom_lower_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom_first_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom_first_row": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom_first_column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstHom_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitary_integral_eq_double": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryReindex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryReindex_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryReindex_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitaryReindex_measurePreserving": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.firstFinEquiv": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.firstFinEquiv_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.firstFinEquiv_succ": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.firstFinEquiv_symm_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.firstFinEquiv_symm_succ": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstFinHom": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstFinHom_zero_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstFinHom_zero_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstFinHom_succ_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstFinHom_succ_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.fixFirstFinHom_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HaarConditioning.unitary_fin_integral_eq_double": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.differentiable_exteriorMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.infinitesimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.hasFDerivAt_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.sandwich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.sandwich_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.infinitesimal_conjTranspose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.infinitesimal_unitary_conjugation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.infinitesimal_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.occupation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.infinitesimal_single_diag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.oneParticle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.oneParticle_isHermitian": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.trace_infinitesimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.oneParticle_diag": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorDifferential.oneParticle_unitary_conjugation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.eigenRotation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.eigenDensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.eigenDensity_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.eigenDensity_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.eigenDensity_oneParticle_diagonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.probability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.probability_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.probability_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.probability_cast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.occupancyProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.common_diagonal_mixture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.common_projection_mixture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.oneParticleReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationMixture.common_readout_mixture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.insertFirst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.mem_insertFirst_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.mem_insertFirst_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.insertFirst_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.insertFirst_surjective_occupied": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.insertFirst_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.sum_insertFirst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.enumerate_insertFirst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.enumerate_insertFirst_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.enumerate_insertFirst_succ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.basisInclusion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.basisInclusion_compress_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.basisInclusion_compress": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.basisInclusion_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.basisInclusion_compress_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.basisInclusion_compress_trace_le_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.intertwine_of_unitary_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.quadratic_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.quadratic_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.weight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.weight_nonneg": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.trace_eq_weight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.compression_zero_of_weight_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.normalized_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.normalized_trace_eq_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.weight_smul_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.quadratic_eq_weight_mul_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.creation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.creation_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.creation_conjTranspose_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.creation_trace_eq_oneParticle": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.exteriorMatrix_fixFirst_compress": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.creation_intertwine": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.rotated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.rotated_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.rotated_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditionalMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditionalMatrix_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditional_weight_mem_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditional_weight_eq_oneParticleReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditional_readout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditional_readout_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ConditionalSector.conditional_readout_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.coordinateProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.permutationUnitary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.occupancyPermutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.occupancyPermutation_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.permutation_conjugates_projection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.occupancy_same_orbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.projectionReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.projectionReadout_eq_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.projectionReadout_mem_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.continuous_projectionReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.projectionReadout_conjugate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.occupancy_readout_same_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.projectionReadout_permutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupancyOrbit.projectionReadout_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.component": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.component_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.component_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.component_common_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.actual_readout_eq_common_mixture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.actual_readout_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.actual_readout_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.occupation_convex_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.IsSlaterDensity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.component_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.eigenDensity_basis_implies_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.OccupationConvexOrder.occupation_equality_implies_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOrbit.orderedPermutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOrbit.orderedPermutation_enumerate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOrbit.permutation_basis_vector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOrbit.ordered_permutation_wedge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOrbit.ordered_permutation_column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOrbit.basis_projector_same_orbit": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOneParticle.signUnitary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOneParticle.diagonal_unitary_preserves_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOneParticle.sign_preserves_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterOneParticle.oneParticle_basisProjector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.basisUnitary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.basisUnitary_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.exists_unitary_extension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.exists_unitary_first_column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.exists_unitary_row_alignment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.exists_unitary_frame_extension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.frameVector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.frameVector_unitary_columns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.unitary_columns_isometry": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.frameVector_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.frameVector_is_unitary_column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.creation_contract_frame": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.contraction_unitary_column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.pureMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.pureMatrix_compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.pureMatrix_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.pureMatrix_unitary_column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.unitary_column_trace_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.normalized_pos_smul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.normalized_compression_isSlater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.rotated_isSlater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterClosure.conditional_isSlater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_mem_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.continuous_test_readout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.quadratic_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_eq_quadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.creation_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.basisProjector_posSemidef": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.basisProjector_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_basisProjector_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.coherent_readout_positive_mass": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.orderedPermutation_mul_basis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_reference_translate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_reference_same_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.integral_readout_reference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_rotated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_rotated_same_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.integral_readout_rotated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_forward_rotated_same_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.integral_readout_forward_rotated": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_coherent_input_same_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.integral_readout_coherent_input": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_conditional": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_conditional_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_conditional_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.integral_conditional": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_eq_one_of_subsingleton": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_zero_particles": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorHusimi.readout_filled_sector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.coherentLaw": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.coherentLaw_isProbability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.coherentLaw_mem_unitInterval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.scaleAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.scaleAverage_eq_integral": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.continuous_scaleAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.convex_scaleAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.strictConvex_scaleAverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.scaleAverage_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.coherent_inner_conditioning": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiScale.coherent_integral_conditioning": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.scaled_test_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.scaled_test_convex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.readout_weight_normalized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.conditional_inner_integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.conditional_coherent_weight": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.zero_sector_isSlater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.reference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.index_card_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.conditional_inner_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.conditional_integral_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.occupation_integral_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.exterior_husimi_convex_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.slater_integral_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.exterior_husimi_equality_implies_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.exterior_husimi_equality_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.HusimiInduction.exterior_husimi_convex_order_any_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.sectorMatrixMeasurable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.sectorMatrixBorel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.projector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.projector_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.conjugate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.conjugate_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.projector_mul": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbitMeasure": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbitMeasure_isProbability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbitMeasure_invariant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbitMeasure_reference_independent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.traceReadout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.traceReadout_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.basisProjector_eq_single": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.traceReadout_projector": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.slater_iff_mem_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbitMeasure_ae_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbit_readout_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbit_integral_eq_haar": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbit_husimi_convex_order": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.SlaterMeasure.orbit_husimi_equality_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.sectorDimension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.sectorDimension_eq_choose": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.sectorDimension_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.powerMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.normalizedMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.wehrl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.sum_readout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.normalizedMoment_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.powerMoment_integrable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.rpow_strictConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.neg_rpow_strictConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.powerMoment_le_coherent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.coherent_le_powerMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.powerMoment_eq_iff_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.normalizedMoment_le_coherent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.coherent_le_normalizedMoment": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.normalizedMoment_eq_iff_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.powerMoment_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.normalizedMoment_pos": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.renyiWehrl": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.renyiWehrl_minimum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.renyiWehrl_eq_iff_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.mul_log_strictConvex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.wehrl_minimum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Fermionic.ExteriorEntropy.wehrl_eq_iff_slater": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_hygiene": "PASS",
+  "clean_compile": "PASS",
+  "fresh_kernel_replay_including_imports": "PASS",
+  "kernel_replay_scope": "Same Lean kernel, all replayable safe non-partial constants in the imported environment replayed from empty; axioms remain axioms.",
+  "full_paper_verified": false,
+  "exterior_husimi_haar_core_verified": true,
+  "exterior_slater_orbit_core_verified": true,
+  "exterior_positive_moments_and_entropy_minima_verified": true,
+  "explicit_beta_gamma_constants_verified": false,
+  "core_roots": [
+    "Fermionic.HusimiInduction.exterior_husimi_convex_order",
+    "Fermionic.HusimiInduction.exterior_husimi_equality_iff",
+    "Fermionic.HusimiInduction.exterior_husimi_convex_order_any_slater",
+    "Fermionic.SlaterMeasure.orbitMeasure_invariant",
+    "Fermionic.SlaterMeasure.orbitMeasure_reference_independent",
+    "Fermionic.SlaterMeasure.orbit_husimi_convex_order",
+    "Fermionic.SlaterMeasure.orbit_husimi_equality_iff",
+    "Fermionic.ExteriorEntropy.sectorDimension_eq_choose",
+    "Fermionic.ExteriorEntropy.normalizedMoment_one",
+    "Fermionic.ExteriorEntropy.wehrl_minimum",
+    "Fermionic.ExteriorEntropy.wehrl_eq_iff_slater",
+    "Fermionic.ExteriorEntropy.renyiWehrl_minimum",
+    "Fermionic.ExteriorEntropy.renyiWehrl_eq_iff_slater"
+  ],
+  "scope": "Full exterior Husimi convex order and strict equality on the original U(n) Haar measurement and original Slater projector-orbit measure, with all physical representation and conditional-state bridges. All positive real power moments, Wehrl and Renyi-Wehrl minima and strict equality are included. Explicit Beta/Gamma coherent constants are not included. Half-spin, eight-mode physical Gaussian rank and full-paper verification remain open."
+}

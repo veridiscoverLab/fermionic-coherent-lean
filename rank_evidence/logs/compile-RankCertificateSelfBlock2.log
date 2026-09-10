@@ -1,0 +1,2 @@
+'Fermionic.RankCertificate.normalSelfBlock2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.RankCertificate.normalMixedBlock2' depends on axioms: [propext, Classical.choice, Quot.sound]

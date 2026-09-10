@@ -1,0 +1,2 @@
+'Fermionic.PolynomialBoundary.eq_zero_of_vanish_off_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.PolynomialBoundary.eval_eq_zero_at_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]

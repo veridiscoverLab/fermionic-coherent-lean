@@ -1,0 +1,3 @@
+'Fermionic.FourMode.nonisotropic_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.FourMode.exactRank_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.FourMode.exactRank_magic' depends on axioms: [propext, Classical.choice, Quot.sound]

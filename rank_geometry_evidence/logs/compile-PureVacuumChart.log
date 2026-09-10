@@ -1,0 +1,2 @@
+'Fermionic.PureVacuumChart.annihilatorProjectionEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Fermionic.PureVacuumChart.graphDirection_two_contractions' depends on axioms: [propext, Classical.choice, Quot.sound]
